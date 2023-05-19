@@ -1,3 +1,5 @@
+module GameStatus where
+
 import CurrentPosition
 import Flag
 
