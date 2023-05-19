@@ -1,3 +1,4 @@
+module Flags where
 
 import Control.Monad.State
 

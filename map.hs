@@ -1,3 +1,5 @@
+module Map where
+
 import Control.Monad.State
 import Control.Monad.IO.Class
 
