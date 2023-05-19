@@ -1,4 +1,4 @@
-module Flags where
+module Flag where
 
 import Control.Monad.State
 
@@ -15,4 +15,11 @@ setFlag = modify(\s -> s {isSet = True})
 
 resetFlag :: State Flag ()
 resetFlag = modify(\s -> s {isSet = False})
+
+getFlagValue :: State Flag Bool
+getFlagValue = gets isSet
+
+getFlagName :: State Flag String
+getFlagName = gets name
+
 
