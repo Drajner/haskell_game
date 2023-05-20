@@ -10,7 +10,7 @@ decidePositionModification :: String -> String -> Flag -> Int
 decidePositionModification  currentPos newPos airlockOpen = do
     let shipPlaces = ["pokoj","dziob","przod_ogona","tyl_ogona","sluza"]
     let outsidePlaces = ["sluza","skrzydlo_prawe","skrzydlo_lewe"]
-    let airlockState = getFlagValue airlockOpen
+    let airlockState = evalState getFlagValue airlockOpen
     if airlockState
         then if elem newPos outsidePlaces
                 then if newPos /= currentPos
