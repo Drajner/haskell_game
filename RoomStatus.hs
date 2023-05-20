@@ -4,17 +4,17 @@ import Data.List
 
 data RoomStatus = RoomStatus
     { roomName :: String 
-    , inventory ::[String]
+    , roomInventory ::[String]
     }
 
 removeFromRoom :: RoomStatus -> String -> RoomStatus
-removeFromRoom status itemToGo = status {inventory = filter (/=itemToGo) (inventory status)}
+removeFromRoom status itemToGo = status {roomInventory = filter (/=itemToGo) (roomInventory status)}
 
 addToRoom :: RoomStatus -> String -> RoomStatus
-addToRoom status newItem = status {inventory = newItem : inventory status}
+addToRoom status newItem = status {roomInventory = newItem : roomInventory status}
 
 printRoomStatus :: RoomStatus -> IO ()
-printRoomStatus status = mapM_ putStrLn (inventory status)
+printRoomStatus status = mapM_ putStrLn (roomInventory status)
 
 findRoomStatus :: String -> [RoomStatus] -> Maybe RoomStatus
 findRoomStatus targetName = find (\status -> roomName status == targetName)
