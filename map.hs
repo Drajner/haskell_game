@@ -1,7 +1,6 @@
 module Map where
 
 import Control.Monad.State
-import Control.Monad.IO.Class
 import Flag
 import CurrentPosition
 
@@ -10,7 +9,7 @@ decidePositionModification :: String -> String -> Flag -> Int
 decidePositionModification  currentPos newPos airlockOpen = do
     let shipPlaces = ["pokoj","dziob","przod_ogona","tyl_ogona","sluza"]
     let outsidePlaces = ["sluza","skrzydlo_prawe","skrzydlo_lewe"]
-    let airlockState = evalState getFlagValue airlockOpen
+    let airlockState = getFlagValue airlockOpen
     if airlockState
         then if elem newPos outsidePlaces
                 then if newPos /= currentPos
@@ -29,7 +28,7 @@ givePositionModificationText 1 pos = ("Kapitan udal sie do " ++ pos)
 givePositionModificationText 2 pos = "Kapitan Bomba wlasnie tam jest"
 givePositionModificationText 3 pos = "Niestety nie da sie tam pojsc."
 
-
+{-
 mapLoop :: (CurrentPosition, Flag) -> IO ()
 mapLoop (pos, airlockFlag) = do
 
@@ -58,6 +57,6 @@ main = do
     let pos = CurrentPosition {position = "pokoj"}
     let airlockFlag = startFlag "sluzaOtwarta"
     mapLoop (pos, airlockFlag)
-
+-}
 
 

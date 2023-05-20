@@ -26,7 +26,7 @@ switchRoomStatus statuses newStatus = map updateStatus statuses
       | roomName status == roomName newStatus = newStatus
       | otherwise = status
 
-{-}
+{-
 main = do
     let rs = ["jeden","dwa"]
     printRoomStatus rs
