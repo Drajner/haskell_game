@@ -9,3 +9,4 @@ addToInventory newItem = modify(\s -> s ++ [newItem])
 printInventory :: Inventory -> IO ()
 printInventory = mapM_ putStrLn
 
+-- legacy don't use

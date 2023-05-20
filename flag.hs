@@ -18,11 +18,11 @@ setFlag = modify(\s -> s {isSet = True})
 resetFlag :: State Flag ()
 resetFlag = modify(\s -> s {isSet = False})
 
-getFlagValue :: State Flag Bool
-getFlagValue = gets isSet
+getFlagValue :: Flag -> Bool
+getFlagValue = isSet
 
-getFlagName :: State Flag String
-getFlagName = gets name
+getFlagName :: Flag -> String
+getFlagName = name
 
 findFlagByName :: String -> [Flag] -> Maybe Flag
 findFlagByName flagName = find (\flag -> name flag == flagName)
@@ -30,3 +30,9 @@ findFlagByName flagName = find (\flag -> name flag == flagName)
 isFlagSet :: String -> [Flag] -> Bool
 isFlagSet flagName flags = isJust (findFlagByName flagName flags)
 
+setFlagByName :: String -> [Flag] -> [Flag]
+setFlagByName flagName = map updateFlag
+  where
+    updateFlag flag
+      | name flag == flagName = flag { isSet = True }
+      | otherwise = flag

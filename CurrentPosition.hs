@@ -11,3 +11,5 @@ changePosition newPosition = modify (\s -> s {position = newPosition})
 
 getPosition :: State CurrentPosition String
 getPosition = gets position
+
+-- legacy don't use

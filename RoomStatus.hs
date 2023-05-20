@@ -1,18 +1,30 @@
 module RoomStatus where
 
-import Control.Monad.State
 import Data.List
 
-type RoomStatus = [String]
+data RoomStatus = RoomStatus
+    { roomName :: String 
+    , inventory ::[String]
+    }
 
-removeFromRoom :: String -> State RoomStatus ()
-removeFromRoom itemToGo = modify(\s -> delete itemToGo s)
+removeFromRoom :: RoomStatus -> String -> RoomStatus
+removeFromRoom status itemToGo = status {inventory = filter (/=itemToGo) (inventory status)}
 
-addToRoom :: String -> State RoomStatus ()
-addToRoom newItem = modify(\s -> s ++ [newItem])
+addToRoom :: RoomStatus -> String -> RoomStatus
+addToRoom status newItem = status {inventory = newItem : inventory status}
 
 printRoomStatus :: RoomStatus -> IO ()
-printRoomStatus = mapM_ putStrLn
+printRoomStatus status = mapM_ putStrLn (inventory status)
+
+findRoomStatus :: String -> [RoomStatus] -> Maybe RoomStatus
+findRoomStatus targetName = find (\status -> roomName status == targetName)
+
+switchRoomStatus ::  [RoomStatus] -> RoomStatus -> [RoomStatus]
+switchRoomStatus statuses newStatus = map updateStatus statuses
+  where
+    updateStatus status
+      | roomName status == roomName newStatus = newStatus
+      | otherwise = status
 
 {-}
 main = do
