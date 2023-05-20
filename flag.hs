@@ -1,6 +1,8 @@
 module Flag where
 
 import Control.Monad.State
+import Data.List
+import Data.Maybe
 
 data Flag = Flag
  { name :: String,
@@ -22,4 +24,9 @@ getFlagValue = gets isSet
 getFlagName :: State Flag String
 getFlagName = gets name
 
+findFlagByName :: String -> [Flag] -> Maybe Flag
+findFlagByName flagName = find (\flag -> name flag == flagName)
+
+isFlagSet :: String -> [Flag] -> Bool
+isFlagSet flagName flags = isJust (findFlagByName flagName flags)
 

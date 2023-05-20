@@ -26,18 +26,18 @@ getRoomStatuses :: GameStatus -> [RoomStatus]
 getRoomStatuses = roomStatuses
 
 
---setFlagByName :: String -> State Flag ()
---setFlagByName flagName = 
-
-
-checkInventory :: GameStatus -> String -> Bool
-checkInventory status itemToCheck = itemToCheck `elem` inventory status
 
 setPosition :: GameStatus -> String -> GameStatus
 setPosition status newPosition = status {currentPosition = newPosition}
 
+checkInventory :: GameStatus -> String -> Bool
+checkInventory status itemToCheck = itemToCheck `elem` inventory status
+
 addToInventory :: GameStatus -> String -> GameStatus
 addToInventory status newItem = status {inventory = newItem : inventory status}
+
+removeFromInventory :: GameStatus -> String -> GameStatus
+removeFromInventory status itemToGo = status {inventory = filter (/=itemToGo) (inventory status)}
 
 printInventory :: GameStatus -> IO ()
 printInventory status = mapM_ putStrLn (inventory status)
