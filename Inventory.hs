@@ -1,4 +1,4 @@
-
+module Inventory where
 import Control.Monad.State
 
 type Inventory = [String]
