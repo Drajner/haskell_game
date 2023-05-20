@@ -7,21 +7,38 @@ import RoomStatus
 import Control.Monad.State
 
 data GameStatus = GameStatus
-    { currentPosition :: CurrentPosition
+    { currentPosition :: String
     , flags :: [Flag]
-    , inventory :: Inventory
+    , inventory :: [String]
     , roomStatuses :: [RoomStatus]
     }
 
-getFlags :: State GameStatus [Flag]
-getFlags = gets flags
+getPosition :: GameStatus -> String
+getPosition = currentPosition
 
-getCurrentPosition :: State GameStatus CurrentPosition
-getCurrentPosition = gets currentPosition
+getFlags :: GameStatus -> [Flag]
+getFlags = flags
 
-getInventory :: State GameStatus Inventory
-getInventory = gets inventory
+getInventory :: GameStatus -> [String]
+getInventory = inventory
 
-getRoomStatuses :: State GameStatus [RoomStatus]
-getRoomStatuses = gets roomStatuses
+getRoomStatuses :: GameStatus -> [RoomStatus]
+getRoomStatuses = roomStatuses
+
+
+--setFlagByName :: String -> State Flag ()
+--setFlagByName flagName = 
+
+
+checkInventory :: GameStatus -> String -> Bool
+checkInventory status itemToCheck = itemToCheck `elem` inventory status
+
+setPosition :: GameStatus -> String -> GameStatus
+setPosition status newPosition = status {currentPosition = newPosition}
+
+addToInventory :: GameStatus -> String -> GameStatus
+addToInventory status newItem = status {inventory = newItem : inventory status}
+
+printInventory :: GameStatus -> IO ()
+printInventory status = mapM_ putStrLn (inventory status)
 

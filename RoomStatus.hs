@@ -8,6 +8,9 @@ type RoomStatus = [String]
 removeFromRoom :: String -> State RoomStatus ()
 removeFromRoom itemToGo = modify(\s -> delete itemToGo s)
 
+addToRoom :: String -> State RoomStatus ()
+addToRoom newItem = modify(\s -> s ++ [newItem])
+
 printRoomStatus :: RoomStatus -> IO ()
 printRoomStatus = mapM_ putStrLn
 
