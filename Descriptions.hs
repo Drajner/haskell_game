@@ -35,5 +35,6 @@ instructionsText = [
     "napraw_silnik. - pozwala naprawic silnik i ukonczyc gre, gdy w posiadaniu sa mlotek, srubokret i klucz-francuski, a takze jest sie na dziobie",
     "instrukcja. - pokazuje liste komend",
     "koniec          - ciekawe co robi ta komenda?",
+    "Inne komendy moga sie pojawic w odpowiednim dla nich momencie.",
     ""
     ]

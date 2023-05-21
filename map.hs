@@ -3,14 +3,14 @@ module Map where
 import Control.Monad.State
 import Flag
 import CurrentPosition
+import GameStatus (GameStatus, getPosition, getFlags, setPosition)
 
 
-decidePositionModification :: String -> String -> Flag -> Int
+decidePositionModification :: String -> String -> Bool -> Int
 decidePositionModification  currentPos newPos airlockOpen = do
     let shipPlaces = ["pokoj","dziob","przod_ogona","tyl_ogona","sluza"]
     let outsidePlaces = ["sluza","skrzydlo_prawe","skrzydlo_lewe"]
-    let airlockState = getFlagValue airlockOpen
-    if airlockState
+    if airlockOpen
         then if elem newPos outsidePlaces
                 then if newPos /= currentPos
                         then 1
@@ -27,6 +27,66 @@ givePositionModificationText :: Int -> String -> String
 givePositionModificationText 1 pos = ("Kapitan udal sie do " ++ pos)
 givePositionModificationText 2 pos = "Kapitan Bomba wlasnie tam jest"
 givePositionModificationText 3 pos = "Niestety nie da sie tam pojsc."
+
+polishCompensationMap :: [String] -> String
+polishCompensationMap cmdWords = do
+        let lastWord = last cmdWords
+        let notLastWord = last (init cmdWords)
+        case lastWord of
+                "pokoj" -> "pokoj"
+                "pokoju" -> "pokoj"
+                "pokój" -> "pokoj"
+                "dziob" -> "dziob"
+                "dziób" -> "dziob"
+                "dziobu" -> "dziob"
+                "ogona" -> do
+                        case notLastWord of
+                                "tył" -> "tyl_ogona"
+                                "przód" -> "przod_ogona"
+                                "tyl" -> "tyl_ogona"
+                                "przod" -> "przod_ogona"
+                                _ -> "nic"
+                "tyl_ogona" -> "tyl_ogona"
+                "przod_ogona" -> "przod_ogona"
+                "tył_ogona" -> "tyl_ogona"
+                "przód_ogona" -> "przod_ogona"
+                "sluza" -> "sluza"
+                "sluzy" -> "sluza"
+                "śluzy" -> "sluza"
+                "śluza" -> "sluza"
+                "prawe" -> "skrzydlo_prawe"
+                "skrzydlo_prawe" -> "skrzydlo_prawe"
+                "skrzydło_prawe" -> "skrzydlo_prawe"
+                "skrzydlo" -> do
+                        case notLastWord of
+                                "lewe" -> "skrzydlo_lewe"
+                                "prawe" -> "skrzydlo_prawe"
+                                _ -> "nic"
+                "lewe" -> "skrzydlo_prawe"
+                "skrzydlo_lewe" -> "skrzydlo_lewe"
+                "skrzydło_lewe" -> "skrzydlo_lewe"
+                _ -> "nic"
+
+
+moveCommand :: GameStatus -> [String] -> (String, GameStatus)
+moveCommand status cmdWords = do
+        let destination = polishCompensationMap cmdWords
+        let airlockOpen = isFlagSet "sluzaOtwarta" (getFlags status)
+        let decision = decidePositionModification (getPosition status) destination airlockOpen
+        let returningMessage = givePositionModificationText decision destination
+        case decision of
+                1 -> do
+                        let newStatus = setPosition status destination
+                        (returningMessage, newStatus)
+
+                2 -> (returningMessage, status)
+
+                3 -> (returningMessage, status)
+
+
+        
+
+
 
 {-
 mapLoop :: (CurrentPosition, Flag) -> IO ()

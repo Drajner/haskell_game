@@ -9,7 +9,7 @@ data CurrentPosition = CurrentPosition
 changePosition :: String -> State CurrentPosition ()
 changePosition newPosition = modify (\s -> s {position = newPosition})
 
-getPosition :: State CurrentPosition String
-getPosition = gets position
+--getPosition :: State CurrentPosition String
+--getPosition = gets position
 
 -- legacy don't use

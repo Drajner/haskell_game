@@ -5,6 +5,7 @@ import GameStatus
 import Descriptions
 import Flag
 import RoomStatus
+import Map (moveCommand)
 
 
 -- print strings from list in separate lines
@@ -27,8 +28,26 @@ gameLoop status = do
     cmd <- readCommand
     let cmdWords = words cmd
     let firstWord = head cmdWords
-    let lastWord = lastWord
-    case cmd of
+    let lastWord = last cmdWords
+    case firstWord of
+        "idz"       -> do
+                    if length cmdWords < 2
+                        then
+                            putStrLn "Ta komenda wymaga pomieszczenia. Np.: 'idz do pokoju' "
+                        else do
+                            let (returningMessage, newStatus) = moveCommand status cmdWords
+                            putStrLn returningMessage
+                            gameLoop newStatus
+                            
+        "idź"       -> do
+                    if length cmdWords < 2
+                        then
+                            putStrLn "Ta komenda wymaga pomieszczenia. Np.: 'idz do pokoju' "
+                        else do
+                            let (returningMessage, newStatus) = moveCommand status cmdWords
+                            putStrLn returningMessage
+                            gameLoop newStatus
+
         "ekwipunek" -> do
                     putStrLn "Kapitan Bomba trzyma obecnie:"
                     printInventory status
@@ -36,6 +55,9 @@ gameLoop status = do
         "instrukcja" -> do
                         printInstructions
                         gameLoop status
+        "chuj"  -> do --debug command
+                    putStrLn (getPosition status)
+                    gameLoop status
         "koniec" -> return ()
         _ -> do printLines ["Nieznana komenda", ""]
                 gameLoop status
@@ -55,6 +77,7 @@ main = do
             , startFlag "farbaZdrapana"
             , startFlag "skrzynkaNaNarzedziaOtwarta"
             , startFlag "drabinaPozaSzafa"
+            , startFlag "sluzaOtwarta"
             ]
     let startingInventory = []
     let startingRoomStatuses = 
