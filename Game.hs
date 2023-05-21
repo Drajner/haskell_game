@@ -25,6 +25,7 @@ readCommand = do
 -- an argument, eg. gameLoop :: State -> IO ()
 gameLoop :: GameStatus -> IO ()
 gameLoop status = do
+    print (isSet (last (getFlags status)))
     cmd <- readCommand
     let cmdWords = words cmd
     let firstWord = head cmdWords
@@ -38,7 +39,7 @@ gameLoop status = do
                             let (returningMessage, newStatus) = moveCommand status cmdWords
                             putStrLn returningMessage
                             gameLoop newStatus
-                            
+
         "idź"       -> do
                     if length cmdWords < 2
                         then
@@ -58,6 +59,11 @@ gameLoop status = do
         "chuj"  -> do --debug command
                     putStrLn (getPosition status)
                     gameLoop status
+        "dupa" -> do
+                    print (isFlagSet "sluzaOtwarta" (getFlags status))
+                    print (isFlagSet "skafanderZalozony" (getFlags status))
+                    gameLoop status
+
         "koniec" -> return ()
         _ -> do printLines ["Nieznana komenda", ""]
                 gameLoop status
@@ -89,7 +95,6 @@ main = do
             , RoomStatus "skrzydlo_lewe" []
             , RoomStatus "skrzydlo_prawe" []
             ]
-
     let startingStatus = GameStatus startingPosition startingFlags startingInventory startingRoomStatuses
     printIntroduction
     printInstructions

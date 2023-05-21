@@ -28,7 +28,9 @@ findFlagByName :: String -> [Flag] -> Maybe Flag
 findFlagByName flagName = find (\flag -> name flag == flagName)
 
 isFlagSet :: String -> [Flag] -> Bool
-isFlagSet flagName flags = isJust (findFlagByName flagName flags)
+isFlagSet flagName flags = case findFlagByName flagName flags of
+  Just flag -> isSet flag
+  Nothing -> False
 
 setFlagByName :: String -> [Flag] -> [Flag]
 setFlagByName flagName = map updateFlag

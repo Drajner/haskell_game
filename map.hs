@@ -62,7 +62,7 @@ polishCompensationMap cmdWords = do
                                 "lewe" -> "skrzydlo_lewe"
                                 "prawe" -> "skrzydlo_prawe"
                                 _ -> "nic"
-                "lewe" -> "skrzydlo_prawe"
+                "lewe" -> "skrzydlo_lewe"
                 "skrzydlo_lewe" -> "skrzydlo_lewe"
                 "skrzydło_lewe" -> "skrzydlo_lewe"
                 _ -> "nic"
