@@ -1,7 +1,6 @@
 -- PODWODNA PRZYGODA KAPITANA BOMBY
 -- Aleksandra Majewska, Daniel Kobiałka, Bartłomiej Dudek 2023
 
-
 import GameStatus
 import Descriptions
 import Flag
@@ -26,11 +25,19 @@ readCommand = do
 gameLoop :: GameStatus -> IO ()
 gameLoop status = do
     cmd <- readCommand
+    let cmdWords = words cmd
+    let firstWord = head cmdWords
+    let lastWord = lastWord
     case cmd of
-        "instructions" -> do printInstructions
-                             gameLoop status
-        "quit" -> return ()
-        _ -> do printLines ["Unknown command.", ""]
+        "ekwipunek" -> do
+                    putStrLn "Kapitan Bomba trzyma obecnie:"
+                    printInventory status
+                    gameLoop status
+        "instrukcja" -> do
+                        printInstructions
+                        gameLoop status
+        "koniec" -> return ()
+        _ -> do printLines ["Nieznana komenda", ""]
                 gameLoop status
 
 main = do
