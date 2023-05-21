@@ -49,6 +49,19 @@ gameLoop status = do
                             putStrLn returningMessage
                             gameLoop newStatus
 
+        --"podnies"   -> do
+                    
+
+
+        {-"otworz"    -> do
+                    if getPosition status == "sluza"
+                        then if
+                                then
+                                else
+                        else
+        "otwórz"    ->
+        "zamknij"   ->-}
+        
         "ekwipunek" -> do
                     putStrLn "Kapitan Bomba trzyma obecnie:"
                     printInventory status
