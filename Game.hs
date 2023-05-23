@@ -6,11 +6,9 @@ import Descriptions
 import Flag
 import RoomStatus
 import Map (moveCommand)
+import Reading
+import Description
 
-
--- print strings from list in separate lines
-printLines :: [String] -> IO ()
-printLines xs = putStr (unlines xs)
                   
 printIntroduction = printLines introductionText
 printInstructions = printLines instructionsText
@@ -38,6 +36,7 @@ gameLoop status = do
                         else do
                             let (returningMessage, newStatus) = moveCommand status cmdWords
                             putStrLn returningMessage
+                            describe newStatus
                             gameLoop newStatus
 
         "idź"       -> do
@@ -47,7 +46,13 @@ gameLoop status = do
                         else do
                             let (returningMessage, newStatus) = moveCommand status cmdWords
                             putStrLn returningMessage
+                            describe newStatus
                             gameLoop newStatus
+
+        "opis"      -> do
+                        describe status
+                        gameLoop status
+
 
         --"podnies"   -> do
                     
@@ -86,7 +91,7 @@ main = do
     let startingFlags =
             [ startFlag "skafanderZalozony"
             , startFlag "skafanderZbadany"
-            , startFlag "klodkaZamknieta"
+            , startFlag "klodkaOtwarta"
             , startFlag "szafkaJanuszaOtwarta"
             , startFlag "kluczJanuszaWydany"
             , startFlag "chudaRybaZlapana"
@@ -97,6 +102,7 @@ main = do
             , startFlag "skrzynkaNaNarzedziaOtwarta"
             , startFlag "drabinaPozaSzafa"
             , startFlag "sluzaOtwarta"
+            , startFlag "januszGotuje"
             ]
     let startingInventory = []
     let startingRoomStatuses = 

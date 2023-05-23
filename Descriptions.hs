@@ -25,11 +25,11 @@ introductionText = [
 
 instructionsText = [
     "KOMENDY:",
-    "idz(miejsce). - pozwala poruszac sie po statku i nie tylko (dostepne miejsca to dziob, pokoj, przod_ogona, tyl_ogona, sluza, skrzydlo_prawe, skrzydlo_lewe)",
+    "idz - pozwala poruszac sie po statku i nie tylko (dostepne miejsca to dziob, pokoj, przod_ogona, tyl_ogona, sluza, skrzydlo_prawe, skrzydlo_lewe), przyklady: idz do pokoju, idz na dziob",
     "opis. - wyswietla opis miejsca",
     "uzyj(przedmiot/obiekt). - uzywa pojedynczego przedmiotu (w przypadku skafandra uzycie oznacza zalozenie lub zdjecie), czasem pozwala na dolaczenie mniejszego przedmiotu do posiadanego wiekszego",
     "podnies(przdmiot) - pozwala wziac przedmiot do ekwipunku",
-    "ekwipunek. - wypisuje przedmioty ktore sa w ekwipunku",
+    "ekwipunek - wypisuje przedmioty ktore sa w ekwipunku",
     "zobacz(obiekt) - pozwala przyjrzec sie obiektowi lub kierunkowi",
     "rozmawiaj(rozmowca, temat) - pozwala na rozmowe z swiadomymi stworzeniami, o tematach im znanych (np. zolnierze i wyposazenie pokoju, janusz tematy wedkarskie)",
     "napraw_silnik. - pozwala naprawic silnik i ukonczyc gre, gdy w posiadaniu sa mlotek, srubokret i klucz-francuski, a takze jest sie na dziobie",
@@ -37,4 +37,60 @@ instructionsText = [
     "koniec          - ciekawe co robi ta komenda?",
     "Inne komendy moga sie pojawic w odpowiednim dla nich momencie.",
     ""
+    ]
+
+
+pokojCookingText = [
+    "Przy stole samotnie siedzi Seba. Janusz dziala w kuchni. Na scianie obskurnie wygladajacego pokoju bedacego centralnym pomieszczeniem Orzela 1",
+    "dumnie wisi kalendarz z rozneglizowana kobieta. Na prawej stronie znajdowala sie malenka kuchnia. Przy wejsciu na ogon znajduja sie szafki nalezace do szeregowych."
+    ]
+
+pokojInitialText = [
+    "Przy stole w pokoju pogrywajac w karty siedza Janusz i Seba. Na scianie obskurnie wygladajacego pokoju bedacego centralnym pomieszczeniem Orzela 1",
+    "dumnie wisi kalendarz z rozneglizowana kobieta. Na prawej stronie znajdowala sie malenka kuchnia. Przy wejsciu na ogon znajduja sie szafki nalezace do szeregowych.",
+    "Opodal wlazu do sluzy lezy skafander."
+    ]
+
+pokojSecondText = [
+    "Przy stole w pokoju pogrywajac w karty siedza Janusz i Seba. Na scianie obskurnie wygladajacego pokoju bedacego centralnym pomieszczeniem Orzela 1",
+    "dumnie wisi kalendarz z rozneglizowana kobieta. Na prawej stronie znajdowala sie malenka kuchnia. Przy wejsciu na ogon znajduja sie szafki nalezace do szeregowych."
+    ]
+
+skrzydloLeweText = [
+    "Lewe skrzydlo ma na sobie jeden stary silnik. Na szczescie ten nie został poturbowany tak bardzo."
+    ]
+
+skrzydloPraweText = [
+    "Do prawego skrzydła przymocowany był silnik. Nie wygladal najgorzej, lecz moze wypadaloby do niego zajrzec."
+    ]
+
+sluzaText = [
+    "Trzeszczaca od cisnienia sluza nie zadowalala swoja jakoscia jeszcze przed wypadkiem.",
+    "Teraz jest jeszcze gorzej. Na szczescie panel kontrolny nadal dziala i mozna otworzyc sluze.",
+    "[Aby otworzyc sluze wpisz 'otworz' lub 'zamknij', aby zamknac.]"
+    ]
+
+przodOgonaText = [
+    "Oczom kapitana ukazuje sie szara, lekko oswietlona, podluzna przestrzen.",
+    "Bomba moze zobaczyc co jest na lewo i na prawo."
+    ]
+
+tylOgonaFirstText = [
+    "'Stoi tu niewielka skrzynka na narzedzia ... albo raczej na narzedzie. Jej rozmiar pozostawia wiele watpliwosci. Jest zamknieta na nietypowa klódke,",
+    "sa na niej trzy przyciski: <^>v chyba nalezy je wcisnac w jakiejs sekwencji. Aby wpisac haslo napisz: haslo([sekwencja])",
+    "Bomba moze zobaczyc co jest na lewo i na prawo."
+    ]
+
+tylOgonaSecondText = [
+    "W skrzynce jest klucz francuski (klucz-francuski)."
+    ]
+
+tylOgonaThirdText = [
+    "Skrzyneczka stoi otworem."
+    ]
+
+dziobText = [
+    "Kapitan znalazł się na dziobie statku. Na przedzie pomieszczenia charczy niesprawny silnik. Zeby opuscic to przeklete miejsce trzeba go naprawic.",
+    "Na wysokiej szafie znajdujacej sie pod sciana lezy skrzynia. Bomba nie jest na tyle wysoki by do niej siednac. Gdzies tu powinien lezec mlotek, ",
+    "jesli pamiec asa Gwiezdnej Floty go nie zawodzi."
     ]
