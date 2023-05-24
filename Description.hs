@@ -29,7 +29,7 @@ describe status = do
         "tyl_ogona"         -> do
                                 if isFlagSet "skrzyniaNaNarzedziaOtwarta" (getFlags status)
                                     then do
-                                        printLines tylOgonaThirdText
+                                        printLines tylOgonaSecondText
                                         itemPlacingDescription (findRoomStatus "tyl_ogona" (getRoomStatuses status))
                                     else do
                                         printLines tylOgonaFirstText
