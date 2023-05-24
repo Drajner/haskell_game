@@ -58,7 +58,10 @@ describe status = do
 itemPlacingDescription :: Maybe RoomStatus -> IO ()
 itemPlacingDescription maybeRoomStat = case maybeRoomStat of
     Just rS -> do
-                putStrLn "Znajduja sie tu:"
-                printRoomStatus rS
+            if null (roomInventory rS)
+                then putStrLn "Nie ma tu przedmiotow do podniesienia."
+                else do
+                    putStrLn "Znajduja sie tu:"
+                    printRoomStatus rS
     Nothing -> putStrLn "Nie ma tu zadnych przedmiotow."
     

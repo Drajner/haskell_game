@@ -8,6 +8,7 @@ import RoomStatus
 import Map (moveCommand)
 import Reading
 import Description
+import Pickup
 
                   
 printIntroduction = printLines introductionText
@@ -60,9 +61,10 @@ gameLoop status = do
                         gameLoop status
 
 
-        --"podnies"   -> do
-                    
-
+        "podnies"   -> do  -- i will be back to it
+                    let (returningMessage, newStatus) = pickupItem status lastWord
+                    putStrLn returningMessage
+                    gameLoop newStatus
 
         "otworz"    -> do
                     if getPosition status == "sluza"
