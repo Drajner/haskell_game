@@ -115,3 +115,10 @@ finaleText = [
     "Orzel 1 szczesliwie opuscil orbite S4+KU.",
     "ZWYCIESTWO" 
     ]
+
+sluzaDeathText = [
+    "Otwarcie sluzy bez zadnego zabezpieczenia nie bylo najrozsadniejszym pomyslem.",
+    "Wejscie na statek zostalo zablokowane, a woda sprawnie zaczela wypelniac pomieszczenie wypierajac tlen.",
+    "Po chwili nie bylo juz czym oddychac. Kapitan utonal zanim zdazyl sklac wszystkich projektantów tego statku.",
+    "KONIEC GRY"
+    ]

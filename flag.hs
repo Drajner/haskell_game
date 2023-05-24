@@ -38,3 +38,10 @@ setFlagByName flagName = map updateFlag
     updateFlag flag
       | name flag == flagName = flag { isSet = True }
       | otherwise = flag
+
+resetFlagByName :: String -> [Flag] -> [Flag]
+resetFlagByName flagName = map updateFlag
+  where
+    updateFlag flag
+      | name flag == flagName = flag { isSet = False }
+      | otherwise = flag

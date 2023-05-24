@@ -64,14 +64,55 @@ gameLoop status = do
                     
 
 
-        {-"otworz"    -> do
+        "otworz"    -> do
                     if getPosition status == "sluza"
-                        then if
-                                then
-                                else
-                        else
-        "otwórz"    ->
-        "zamknij"   ->-}
+                        then if isFlagSet "sluzaOtwarta" (getFlags status)
+                                then do
+                                    putStrLn "Nie ma potrzeby otwierac dobrze otwartej sluzy"
+                                    gameLoop status
+                                else if isFlagSet "skafanderZalozony" (getFlags status)
+                                        then do
+                                            let newStatus = setFlagInStatus status "sluzaOtwarta"
+                                            putStrLn "Sluza skrzypiac niemilosiernie, wypelnia sie woda. Po paru chwilach wypelnia sie calkowicie i otwiera wyjscie."
+                                            gameLoop newStatus
+                                        else do 
+                                            printLines sluzaDeathText
+                                            return()
+
+                        else do
+                            putStrLn "Nie ma tu czego otwierać!"
+                            gameLoop status
+        "otwórz"    ->do
+                    if getPosition status == "sluza"
+                        then if isFlagSet "sluzaOtwarta" (getFlags status)
+                                then do
+                                    putStrLn "Nie ma potrzeby otwierac dobrze otwartej sluzy"
+                                    gameLoop status
+                                else if isFlagSet "skafanderZalozony" (getFlags status)
+                                        then do
+                                            let newStatus = setFlagInStatus status "sluzaOtwarta"
+                                            putStrLn "Sluza skrzypiac niemilosiernie, wypelnia sie woda. Po paru chwilach wypelnia sie calkowicie i otwiera wyjscie."
+                                            gameLoop newStatus
+                                        else do 
+                                            printLines sluzaDeathText
+                                            return()
+
+                        else do
+                            putStrLn "Nie ma tu czego otwierać!"
+                            gameLoop status
+        "zamknij"   -> do
+                    if getPosition status == "sluza"
+                        then if isFlagSet "sluzaOtwarta" (getFlags status)
+                                then do
+                                    let newStatus = resetFlagInStatus status "sluzaOtwarta"
+                                    putStrLn "Sluza skrzypiac niemilosiernie, wypelnia sie woda. Po paru chwilach wypelnia sie calkowicie i otwiera wyjscie."
+                                    gameLoop newStatus
+                                else do
+                                    putStrLn "Ta sluza bardziej sie juz nie zamknie."
+                                    gameLoop status
+                        else do
+                            putStrLn "Nie ma tu czego zamykac!"
+                            gameLoop status
         
         "ekwipunek" -> do
                     putStrLn "Kapitan Bomba trzyma obecnie:"

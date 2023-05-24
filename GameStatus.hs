@@ -40,3 +40,12 @@ removeFromInventory status itemToGo = status {inventory = filter (/=itemToGo) (i
 printInventory :: GameStatus -> IO ()
 printInventory status = mapM_ putStrLn (inventory status)
 
+setFlagInStatus :: GameStatus -> String -> GameStatus
+setFlagInStatus status flagToSetName = do
+    let newFlags = setFlagByName flagToSetName (getFlags status)
+    status {flags = newFlags}
+
+resetFlagInStatus :: GameStatus -> String -> GameStatus
+resetFlagInStatus status flagToSetName = do
+    let newFlags = resetFlagByName flagToSetName (getFlags status)
+    status {flags = newFlags}
