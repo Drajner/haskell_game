@@ -23,7 +23,6 @@ readCommand = do
 -- an argument, eg. gameLoop :: State -> IO ()
 gameLoop :: GameStatus -> IO ()
 gameLoop status = do
-    print (isSet (last (getFlags status)))
     cmd <- readCommand
     let cmdWords = words cmd
     let firstWord = head cmdWords
@@ -34,20 +33,27 @@ gameLoop status = do
                         then
                             putStrLn "Ta komenda wymaga pomieszczenia. Np.: 'idz do pokoju' "
                         else do
-                            let (returningMessage, newStatus) = moveCommand status cmdWords
+                            let (succesfulMove, returningMessage, newStatus) = moveCommand status cmdWords
                             putStrLn returningMessage
-                            describe newStatus
-                            gameLoop newStatus
+                            if succesfulMove
+                                then do
+                                    describe newStatus
+                                    gameLoop newStatus
+                                else gameLoop newStatus
 
         "idź"       -> do
                     if length cmdWords < 2
                         then
                             putStrLn "Ta komenda wymaga pomieszczenia. Np.: 'idz do pokoju' "
                         else do
-                            let (returningMessage, newStatus) = moveCommand status cmdWords
+                            let (succesfulMove, returningMessage, newStatus) = moveCommand status cmdWords
                             putStrLn returningMessage
-                            describe newStatus
-                            gameLoop newStatus
+                            if succesfulMove
+                                then do
+                                    describe newStatus
+                                    gameLoop newStatus
+                                else gameLoop newStatus
+
 
         "opis"      -> do
                         describe status
@@ -117,5 +123,6 @@ main = do
     let startingStatus = GameStatus startingPosition startingFlags startingInventory startingRoomStatuses
     printIntroduction
     printInstructions
+    describe startingStatus
     gameLoop startingStatus
 

@@ -68,7 +68,7 @@ polishCompensationMap cmdWords = do
                 _ -> "nic"
 
 
-moveCommand :: GameStatus -> [String] -> (String, GameStatus)
+moveCommand :: GameStatus -> [String] -> (Bool, String, GameStatus)
 moveCommand status cmdWords = do
         let destination = polishCompensationMap cmdWords
         let airlockOpen = isFlagSet "sluzaOtwarta" (getFlags status)
@@ -77,11 +77,11 @@ moveCommand status cmdWords = do
         case decision of
                 1 -> do
                         let newStatus = setPosition status destination
-                        (returningMessage, newStatus)
+                        (True, returningMessage, newStatus)
 
-                2 -> (returningMessage, status)
+                2 -> (False, returningMessage, status)
 
-                3 -> (returningMessage, status)
+                3 -> (False, returningMessage, status)
 
 
         
