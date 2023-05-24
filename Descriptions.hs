@@ -26,7 +26,7 @@ introductionText = [
 instructionsText = [
     "KOMENDY:",
     "idz - pozwala poruszac sie po statku i nie tylko (dostepne miejsca to dziob, pokoj, przod_ogona, tyl_ogona, sluza, skrzydlo_prawe, skrzydlo_lewe), przyklady: idz do pokoju, idz na dziob",
-    "opis. - wyswietla opis miejsca",
+    "opis - wyswietla opis miejsca",
     "uzyj(przedmiot/obiekt). - uzywa pojedynczego przedmiotu (w przypadku skafandra uzycie oznacza zalozenie lub zdjecie), czasem pozwala na dolaczenie mniejszego przedmiotu do posiadanego wiekszego",
     "podnies(przdmiot) - pozwala wziac przedmiot do ekwipunku",
     "ekwipunek - wypisuje przedmioty ktore sa w ekwipunku",
@@ -77,7 +77,7 @@ przodOgonaText = [
 
 tylOgonaFirstText = [
     "'Stoi tu niewielka skrzynka na narzedzia ... albo raczej na narzedzie. Jej rozmiar pozostawia wiele watpliwosci. Jest zamknieta na nietypowa klódke,",
-    "sa na niej trzy przyciski: <^>v chyba nalezy je wcisnac w jakiejs sekwencji. Aby wpisac haslo napisz: haslo([sekwencja])",
+    "sa na niej trzy przyciski: <^>v chyba nalezy je wcisnac w jakiejs sekwencji. Aby wpisac haslo napisz: wpisz [sekwencja]",
     "Bomba moze zobaczyc co jest na lewo i na prawo."
     ]
 
@@ -94,3 +94,26 @@ dziobText = [
     "Na wysokiej szafie znajdujacej sie pod sciana lezy skrzynia. Bomba nie jest na tyle wysoki by do niej siednac. Gdzies tu powinien lezec mlotek, ",
     "jesli pamiec asa Gwiezdnej Floty go nie zawodzi."
     ]
+
+repairFailToolsText = [
+    "Naprawienie silnika bez odpowiednich narzedzi jest niemozliwe. Zaloga Orzela 1 rowniez bardzo by chciala, zeby tak sie dalo. Niestety cudow nie ma.",
+    "Do naprawy maszynerii potrzeba mlotka, klucza francuskiego i srubokreta."
+
+]
+
+repairFailPlaceText = [
+    "Glowny silnik statku, ktory wymaga naprawy jest na dziobie.",
+    "Do naprawy maszynerii potrzeba mlotka, klucza francuskiego i srubokreta."
+]
+
+finaleText = [
+    "Kapitan po mozolnych poszukiwaniach wreszcie mogl zabrac sie do roboty. Mogl przyjrzec sie silnikowi. Janusz i Seba spogladali na prace fachowca zza jego plecow.",
+    "Bomba zlapal za mlotek i wyciagnal reke w strone podwladnych",
+    "'Potrzymaj!' - burknal.",
+    "Chwycil w lewa dlon srubokret, podrapal sie po plecach i stal chwile gapiac sie na maszyne w glebokim skupieniu."
+    "W koncu wzial klucz francuski. Dokrecil nim zarowke znajdujaca sie ponad silnikem, po czym zadal kilka solidnych kopniakow w uszkodzony sprzet"
+    "'Dobra. Bedzie dzialac. Chyba. Na miejsca, panowie. Opuszczamy te dziure' - skwitowal."
+    "Orzel 1 szczesliwie opuscil orbite S4+KU."
+    "ZWYCIESTWO" 
+
+]
