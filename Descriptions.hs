@@ -98,22 +98,20 @@ dziobText = [
 repairFailToolsText = [
     "Naprawienie silnika bez odpowiednich narzedzi jest niemozliwe. Zaloga Orzela 1 rowniez bardzo by chciala, zeby tak sie dalo. Niestety cudow nie ma.",
     "Do naprawy maszynerii potrzeba mlotka, klucza francuskiego i srubokreta."
-
-]
+    ]
 
 repairFailPlaceText = [
     "Glowny silnik statku, ktory wymaga naprawy jest na dziobie.",
     "Do naprawy maszynerii potrzeba mlotka, klucza francuskiego i srubokreta."
-]
+    ]
 
 finaleText = [
     "Kapitan po mozolnych poszukiwaniach wreszcie mogl zabrac sie do roboty. Mogl przyjrzec sie silnikowi. Janusz i Seba spogladali na prace fachowca zza jego plecow.",
     "Bomba zlapal za mlotek i wyciagnal reke w strone podwladnych",
     "'Potrzymaj!' - burknal.",
-    "Chwycil w lewa dlon srubokret, podrapal sie po plecach i stal chwile gapiac sie na maszyne w glebokim skupieniu."
-    "W koncu wzial klucz francuski. Dokrecil nim zarowke znajdujaca sie ponad silnikem, po czym zadal kilka solidnych kopniakow w uszkodzony sprzet"
-    "'Dobra. Bedzie dzialac. Chyba. Na miejsca, panowie. Opuszczamy te dziure' - skwitowal."
-    "Orzel 1 szczesliwie opuscil orbite S4+KU."
+    "Chwycil w lewa dlon srubokret, podrapal sie po plecach i stal chwile gapiac sie na maszyne w glebokim skupieniu." ,
+    "W koncu wzial klucz francuski. Dokrecil nim zarowke znajdujaca sie ponad silnikem, po czym zadal kilka solidnych kopniakow w uszkodzony sprzet",
+    "'Dobra. Bedzie dzialac. Chyba. Na miejsca, panowie. Opuszczamy te dziure' - skwitowal.",
+    "Orzel 1 szczesliwie opuscil orbite S4+KU.",
     "ZWYCIESTWO" 
-
-]
+    ]

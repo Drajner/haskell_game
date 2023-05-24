@@ -1,8 +1,6 @@
 module GameStatus where
 
-import CurrentPosition
 import Flag
-import Inventory
 import RoomStatus
 import Control.Monad.State
 
