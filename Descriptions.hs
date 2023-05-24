@@ -84,10 +84,6 @@ tylOgonaFirstText = [
     ]
 
 tylOgonaSecondText = [
-    "W skrzynce jest klucz francuski (klucz-francuski)."
-    ]
-
-tylOgonaThirdText = [
     "Skrzyneczka stoi otworem."
     ]
 
