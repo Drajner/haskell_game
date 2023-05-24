@@ -72,7 +72,9 @@ sluzaText = [
 
 przodOgonaText = [
     "Oczom kapitana ukazuje sie szara, lekko oswietlona, podluzna przestrzen.",
-    "Bomba moze zobaczyc co jest na lewo i na prawo."
+    "Po prawej stronie stoi brzydki kredens, może nawet starszy od calego tego gruchota.",
+    "Gore mebla stanowi polka zablokowana szklanymi, nieprzezroczystymi drzwiczkami.",
+    "Pod oszklona czescia jest polka, a jeszcze nizej kolejne, tym razem drewniane, drziwczki."
     ]
 
 tylOgonaFirstText = [
@@ -122,3 +124,5 @@ sluzaDeathText = [
     "Po chwili nie bylo juz czym oddychac. Kapitan utonal zanim zdazyl sklac wszystkich projektantów tego statku.",
     "KONIEC GRY"
     ]
+
+
