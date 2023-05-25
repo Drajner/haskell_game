@@ -120,9 +120,26 @@ gameLoop status = do
                     putStrLn "Kapitan Bomba trzyma obecnie:"
                     printInventory status
                     gameLoop status
+
         "instrukcja" -> do
                         printInstructions
                         gameLoop status
+
+        "napraw" -> do 
+                    if getPosition status == "dziob"
+                        then do
+                            if "srubokret" `elem` getInventory status && "mlotek" `elem` getInventory status && "klucz_francuski" `elem` getInventory status
+                                then do
+                                    printLines finaleText
+                                    return ()
+                                else do
+                                    printLines repairFailToolsText
+                                    gameLoop status
+                        else do
+                            printLines repairFailPlaceText
+                            gameLoop status
+
+        
         "chuj"  -> do --debug command
                     putStrLn (getPosition status)
                     gameLoop status

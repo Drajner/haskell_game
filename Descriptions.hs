@@ -78,13 +78,30 @@ przodOgonaText = [
     ]
 
 tylOgonaFirstText = [
-    "'Stoi tu niewielka skrzynka na narzedzia ... albo raczej na narzedzie. Jej rozmiar pozostawia wiele watpliwosci. Jest zamknieta na nietypowa klódke,",
+    "Tyl ogona stanowi niewielka kanciapa. Stoi tu niewielka skrzynka na narzedzia ... albo raczej na narzedzie.",
+    "Jej rozmiar pozostawia wiele watpliwosci. Jest zamknieta na nietypowa klodke,",
     "sa na niej trzy przyciski: <^>v chyba nalezy je wcisnac w jakiejs sekwencji. Aby wpisac haslo napisz: wpisz [sekwencja]",
-    "Bomba moze zobaczyc co jest na lewo i na prawo."
+    "Na prawej scianie tego obskurnego pomieszczenia z nieznanego nikomu powodu wisi obrazek wsi polskiej.",
+    "Jeden szczegol zwraca uwage … na polu stoi sobie pies o trzech nogach. Biedak musial wiele przezyc."
     ]
 
 tylOgonaSecondText = [
-    "Skrzyneczka stoi otworem."
+    "Tyl ogona stanowi niewielka kanciapa. Stoi tu niewielka skrzynka na narzedzia ... albo raczej na narzedzie.",
+    "Jej rozmiar pozostawia wiele watpliwosci. Skrzyneczka stoi otworem,",
+    "Na prawej scianie tego obskurnego pomieszczenia z nieznanego nikomu powodu wisi obrazek wsi polskiej.",
+    "Jeden szczegol zwraca uwage … na polu stoi sobie pies o trzech nogach. Biedak musial wiele przezyc."
+    ]
+
+tylOgonaFirstSubtext = [
+        "Farba na niebie wyglada na swiezsza od reszty. Ktos chyba chcial cos zamalowac."
+    ]
+
+tylOgonaSecondSubtext =[
+        "Na niebie jest napisane “mcsldctc” pewnie jakis analfabeta to pisal."
+    ]
+
+tylOgonaSzalikSubtext = [
+        "W kacie lezy szalik z napisem POLSKA MISTRZEM POLSKI w kolorach bialym i czerwonym."
     ]
 
 dziobText = [
@@ -94,7 +111,7 @@ dziobText = [
     ]
 
 repairFailToolsText = [
-    "Naprawienie silnika bez odpowiednich narzedzi jest niemozliwe. Zaloga Orzela 1 rowniez bardzo by chciala, zeby tak sie dalo. Niestety cudow nie ma.",
+    "Naprawienie silnika bez odpowiednich narzedzi jest prawdopodobnie niemozliwe. Zaloga Orzela 1 rowniez bardzo by chciala, zeby tak sie dalo. Niestety cudow nie ma.",
     "Do naprawy maszynerii potrzeba mlotka, klucza francuskiego i srubokreta."
     ]
 

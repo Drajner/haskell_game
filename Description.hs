@@ -30,9 +30,28 @@ describe status = do
                                 if isFlagSet "skrzyniaNaNarzedziaOtwarta" (getFlags status)
                                     then do
                                         printLines tylOgonaSecondText
+                                        if isFlagSet "farbaZdrapana" (getFlags status)
+                                            then printLines tylOgonaSecondSubtext
+                                            else printLines tylOgonaFirstSubtext
+                                        case findRoomStatus "tyl_ogona" (getRoomStatuses status) of
+                                            Just tos    -> do
+                                                        if "szalik" `elem` (roomInventory tos)
+                                                            then printLines tylOgonaSzalikSubtext
+                                                            else pure ()
+                                            Nothing     -> pure ()
+                                        
                                         itemPlacingDescription (findRoomStatus "tyl_ogona" (getRoomStatuses status))
                                     else do
                                         printLines tylOgonaFirstText
+                                        if isFlagSet "farbaZdrapana" (getFlags status)
+                                            then printLines tylOgonaSecondSubtext
+                                            else printLines tylOgonaFirstSubtext
+                                        case findRoomStatus "tyl_ogona" (getRoomStatuses status) of
+                                            Just tos    -> do
+                                                        if "szalik" `elem` (roomInventory tos)
+                                                            then printLines tylOgonaSzalikSubtext
+                                                            else pure ()
+                                            Nothing     -> pure ()
                                         itemPlacingDescription (findRoomStatus "tyl_ogona" (getRoomStatuses status))
 
         
