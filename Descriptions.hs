@@ -139,3 +139,120 @@ sluzaDeathText = [
     ]
 
 
+lookCalendarText = [
+    "Modelka kusi oczy kapitana. To juz koncowka marca.",
+    "Dokladniej 26 marca 2039 roku. Za 2 tygodnie powinna przyjsc wyplata i znowu bedzie sie mozna napic.",
+    "Byleby nie skonczyc tak jak w Nowy Rok dwa lata temu. Wtedy to byla tragedia... Przez bite dwa dni Bomba byl nie do zycia.",
+    "Ledwo prowadzil rakiete. Nie dotarl na narodziny swojego syna, chociaz i tak by tego nie pamietal.",
+    "Dzien po pierwszym stycznia nie zatrzymal sie w jego pamieci. Aldona nadal ma mu to za zle."
+    ]
+
+lookKitchenCookingText = [
+    "Janusz usilnie próbuje dojsc do porozumienia z otaczajacym go syfem.",
+    "Patrzac na tempo jego dzialan kapitan dochodzi do wniosku, ze chwile to potrwa zanim dostana kolacje."
+    ]
+
+lookKitchenNormalText = [
+    "Potworny syf rzucal sie w oczy. Brudne naczynia lezaly wszedzie."
+    ]
+
+lookSuitClosedText = [
+    "Gwiezdna Flota postanowila wyposazyc statki 'nowoczesne', 30-letnie skafandry, UBERSPEIMACHER419.",
+    "Firma, która wygrala przetarg skupila, je ze zlomu i wynajela prywaciarza, aby je polatal za póldarmo.",
+    "Gwiezdna Flota jak widac nie oszczedza na bezpieczenstwie swoich zolnierzy. Moze i nie byly tanie, ale za to byly nedzne. Cos za cos.",
+    "Miejmy nadzieje, ze wyjscie w tym poza statek nie bedzie równalo sie pewnej smierci.",
+    "Niestety skafander zostal zablokowany klódka z zamkiem na 4 cyfry i przypieta karteczka z napisem:",
+    "'Kod to data urodzin naszego Brajanka, mam nadzieje ze pamietasz!'",
+    "'Kurrr...' - wycedzil przez zeby Bomba. - 'Trudne...'",
+    "[Aby podac kod do klodki, wpisz XXXX]"
+    ]
+
+lookSuitText = [
+    "Gwiezdna Flota postanowila wyposazyc statki 'nowoczesne', 30-letnie skafandry, UBERSPEIMACHER419.",
+    "Firma, która wygrala przetarg skupila, je ze zlomu i wynajela prywaciarza, aby je polatal za póldarmo.",
+    "Gwiezdna Flota jak widac nie oszczedza na bezpieczenstwie swoich zolnierzy. Moze i nie byly tanie, ale za to byly nedzne. Cos za cos.",
+    "Miejmy nadzieje, ze wyjscie w tym poza statek nie bedzie równalo sie pewnej smierci."
+    ]
+
+lookLockersText = [
+    "Szafki nalezace do Janusza i Seby byly zamkniete na klucz. Zapewne kazdy z nich ma swój klucz.",
+    "[Jesli kapitan dysponuje kluczem moze skorzystac z komendy otworz szafke Janusza lub otworz szafke Seby.]"
+    ]
+
+lookLockersOpenText = [
+    "Szafka Seby nadal jest zamknieta. Szafka nalezaca do Janusza jest otwarta i pusta."
+    ]
+
+suitCodeSuccessText = [
+    "'Nareszcie... 02.01.2037. Aldona nie moglas czegos latwiejszego wybrac?' - wyrzucil pod nosem Bomba otwierajac zamek.",
+    "Teraz mozna zabrac skafander [komenda podnies]"
+    ]
+
+suitCodeFailText = [
+    "Palaki klódki nie puszczaly niczym Mariusz Pudzianowski malego fiata w Silaczach.",
+    "'To nie to... kiedy to bylo?' - zastanawial sie sfrustrowany kapitan."
+    ]
+
+suitCodeUnknownText = [
+    "Nie ma tu nic co mogloby przyjac kod."
+    ]
+
+openSebaLockerText = [
+    "Szafka Seby niestety jest zamknieta i bez klucza moze byc niemozliwa do otwarcia."
+    ]
+
+openJanuszLockerText = [
+    "Po krótkiej, lecz uciazliwej szamotaninie z przyrdzewialym zamkiem szafki, Bombie udalo sie otworzyc szafke podkomendnego.",
+    "Niestety potyczka poskutkowala powaznymi stratami, klucz utknal w drzwiczkach i za nic nie chce ich opuscic.",
+    "Na podloge pokoju z impetem wylecialy wedka_bez_haczyka oraz czerwona_przyneta, zielona_przyneta, niebieska_przyneta.",
+    "Niestety wedka moze byc problematyczna w uzyciu bez haczyka."
+    ]
+
+openJanuszLockerFailText = [
+    "Ciezko byloby otworzyc szafke bez klucza."
+    ]
+
+openJanuszLockerAgainText = [
+    "Pusta szafka stoi juz otworem."
+    ]
+
+lookLeftEngineText = [
+    "Stary, trzymajacy sie jeszcze silnik zostal zamieszkaly przez chuda rybe. Niestety jest ona poza zasiegiem reki kapitana.",
+    "Moze udaloby sie ja wyploszyc przy uzyciu mlotka?"
+    ]
+
+lookLeftEngineEmptyText = [
+    "Silnik jest pusty..."
+    ]
+
+lookRightEngineText = [
+    "Wewnatrz silnika rezyduje potezna, gruba ryba. Bomba zdecydowal sie nie ryzykowac wkladania tam reki.",
+    "Moze daloby sie wywabic jakos ta rybe z tego silnika"
+    ]
+
+lookRightEngineEmptyText = [
+    "Silnik jest pusty..."
+    ]
+
+lookCabinetText = [
+    "Wewnatrz obszernej metalowej szafy znajduje sie drabina. Oby tylko wytrzymala ciezar kapitana."
+    ]
+
+lookCabinetEmptyText = [
+    "Szafa jest pusta."
+    ]
+
+lookGlassDoorText = [
+    "Kapitan zlapal za uchwyt szklanych drzwiczek.",
+    "'Ani drgna, chyba sie zaciely.' - mruknal pod nosem"
+    ]
+
+lookGlassDoorOpenText = [
+    "Ktos widocznie gral na tyle w kólko i krzyzyk. W dodatku bardzo nieudolnie.",
+    "'Co za debile, nie wiedzieli jak sie w to gra? Przeciez nawet w nazwie jest kolko i krzyzyk. A tutaj?' - pomyslal",
+    "< | x | o",
+    "—--------",
+    "o | o | >",
+    "—--------",
+    "^ | ^ | >"
+    ]
