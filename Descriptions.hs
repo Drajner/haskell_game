@@ -251,9 +251,9 @@ lookGlassDoorOpenText = [
     "Ktos widocznie gral na tyle w kólko i krzyzyk. W dodatku bardzo nieudolnie.",
     "'Co za debile, nie wiedzieli jak sie w to gra? Przeciez nawet w nazwie jest kolko i krzyzyk. A tutaj?' - pomyslal",
     "< | x | o",
-    "—--------",
+    "---------",
     "o | o | >",
-    "—--------",
+    "---------",
     "^ | ^ | >"
     ]
 
@@ -342,9 +342,9 @@ useHammerGlassDoorText = [
     "Ktos widocznie gral na tyle w kólko i krzyzyk. W dodatku bardzo nieudolnie.",
     "'Co za debile, nie wiedzieli jak sie w to gra? Przeciez nawet w nazwie jest kolko i krzyzyk. A tutaj?' - pomyslal",
     "< | x | o",
-    "—--------",
+    "---------",
     "o | o | >",
-    "—--------",
+    "---------",
     "^ | ^ | >"
     ]
 
