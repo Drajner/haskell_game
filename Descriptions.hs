@@ -82,14 +82,14 @@ tylOgonaFirstText = [
     "Jej rozmiar pozostawia wiele watpliwosci. Jest zamknieta na nietypowa klodke,",
     "sa na niej trzy przyciski: <^>v chyba nalezy je wcisnac w jakiejs sekwencji. Aby wpisac haslo napisz: wpisz [sekwencja]",
     "Na prawej scianie tego obskurnego pomieszczenia z nieznanego nikomu powodu wisi obrazek wsi polskiej.",
-    "Jeden szczegol zwraca uwage … na polu stoi sobie pies o trzech nogach. Biedak musial wiele przezyc."
+    "Jeden szczegol zwraca uwage... na polu stoi sobie pies o trzech nogach. Biedak musial wiele przezyc."
     ]
 
 tylOgonaSecondText = [
     "Tyl ogona stanowi niewielka kanciapa. Stoi tu niewielka skrzynka na narzedzia ... albo raczej na narzedzie.",
     "Jej rozmiar pozostawia wiele watpliwosci. Skrzyneczka stoi otworem,",
     "Na prawej scianie tego obskurnego pomieszczenia z nieznanego nikomu powodu wisi obrazek wsi polskiej.",
-    "Jeden szczegol zwraca uwage … na polu stoi sobie pies o trzech nogach. Biedak musial wiele przezyc."
+    "Jeden szczegol zwraca uwage ... na polu stoi sobie pies o trzech nogach. Biedak musial wiele przezyc."
     ]
 
 tylOgonaFirstSubtext = [
