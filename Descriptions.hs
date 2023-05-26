@@ -501,3 +501,20 @@ askSebaHint = [
     "kuchnie",
     "szafke"
     ]
+
+removeSuitText = [
+    "Wychodzenie ze skafandra okazalo sie dosc trudne, gdyz sprzet chodzil dosc opornie.",
+    "Mimo wszystko caly wysilek byl warty uwolnienia sie od tego psakudnego kostiumu. Przynajmniej teraz kapitan ma szanse cos uslyszec"
+    ]
+
+removeSuitDeathText = [
+    "Chec pooddychania sobie woda kapitana zostala natychmiast spelniona. Po zdjeciu helmu skafandra pluca kapitana natychmiast wypelnily sie zawartoscia oceanu.",
+    "KONIEC GRY."
+    ]
+
+removeSuitFishText = [
+    "Juz w momencie zdejmowania helmu Bomba zorientowal sie ze slyszy nieznajomy glos.",
+    "'ZOSTAW MNIE TY BYDLAKU! MOJA *ZONA* CI TEGO NIE WYBACZY! Znaczy moja byla *zona*... ",
+    "Marzena odeszla ode mnie juz jakis czas temu. Gruba baba...' - wykrzyczalo cos piskliwym glosem.",
+    "Tytus zorientowal sie, ze za irytujacy monolog odpowiada chuda_ryba wyciagnieta z oceanu. Moze rozmowa z nia da jakies interesujace informacje."
+    ]

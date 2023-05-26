@@ -11,7 +11,8 @@ import Description
 import Pickup
 import Items
 import Look
-import Ask (askAbout)
+import Ask
+import Remove
 
                   
 printIntroduction = printLines introductionText
@@ -81,12 +82,12 @@ gameLoop status = do
                     printLines returningMessage
                     gameLoop newStatus
 
-        "zapytaj"   -> do
+        "zapytaj"   -> do -- as above
                     let (returningMessage, newStatus) = askAbout status secondWord lastWord
                     printLines returningMessage
                     gameLoop newStatus
 
-        "otworz"    -> do -- need to do lockers
+        "otworz"    -> do
                     case getPosition status of
                         "sluza" -> if isFlagSet "sluzaOtwarta" (getFlags status)
                                     then do
@@ -292,6 +293,13 @@ gameLoop status = do
                         _ -> do
                             putStrLn "Nie ma tu nic do wpisania!"
                             gameLoop status
+
+        "zdejmij" ->do
+                    let (returningMessage, newStatus, isDead) = remove status cmdWords
+                    printLines returningMessage
+                    if isDead
+                        then return ()
+                        else gameLoop newStatus
 
         "chuj"  -> do --debug command
                     putStrLn (getPosition status)
