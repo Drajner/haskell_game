@@ -21,17 +21,17 @@ useItem status item = if item `elem` getInventory status
                             "czerwona_przyneta"         ->  if "wedka" `elem` getInventory status
                                                                 then do
                                                                     let newStatus = addToInventory (removeFromInventory status "wedka") "wedka_z_czerwona_przyneta"
-                                                                    (useRedBaitSuccessText, status)
+                                                                    (useRedBaitSuccessText, newStatus)
                                                                 else (useBaitFailText, status)
                             "zielona_przyneta"          ->  if "wedka" `elem` getInventory status
                                                                 then do
                                                                     let newStatus = addToInventory (removeFromInventory status "wedka") "wedka_z_zielona_przyneta"
-                                                                    (useGreenBaitSuccessText, status)
+                                                                    (useGreenBaitSuccessText, newStatus)
                                                                 else (useBaitFailText, status)
                             "niebieska_przyneta"        ->  if "wedka" `elem` getInventory status
                                                                 then do
                                                                     let newStatus = addToInventory (removeFromInventory status "wedka") "wedka_z_niebieska_przyneta"
-                                                                    (useBlueBaitSuccessText, status)
+                                                                    (useBlueBaitSuccessText, newStatus)
                                                                 else (useBaitFailText, status)
                             "mlotek"                    ->  if not(isFlagSet "chudaRybaZlapana" (getFlags status)) && getPosition status == "skrzydlo_lewe"
                                                                 then do
@@ -68,18 +68,14 @@ useItem status item = if item `elem` getInventory status
                                                                     (useHookOnPaintText, newStatus)
                                                                 else if "wedka_bez_haczyka" `elem` getInventory status 
                                                                         then do
-                                                                            let newStatus = removeFromInventory (removeFromInventory (addToInventory status "wedka") "wedbka_bez_haczyka") "haczyk"
+                                                                            let newStatus = (removeFromInventory (removeFromInventory (addToInventory status "wedka") "wedka_bez_haczyka") "haczyk")
                                                                             (useHookOnRodText, newStatus)
                                                                         else (useHookHintText, status)
                             "srubokret"                 -> if getPosition status == "tyl_ogona" && not(isFlagSet"farbaZdrapana" (getFlags status))
                                                                 then do
                                                                     let newStatus = setFlagInStatus status "farbaZdrapana"
                                                                     (useHookOnPaintText, newStatus)
-                                                                else if "wedka_bez_haczyka" `elem` getInventory status 
-                                                                        then do
-                                                                            let newStatus = removeFromInventory (removeFromInventory (addToInventory status "wedka") "wedbka_bez_haczyka") "haczyk"
-                                                                            (useHookOnRodText, newStatus)
-                                                                        else (useHookHintText, status)
+                                                                else (useGeneralFailText, status)
                             "ksiazka"                   -> (useBookText,status)
                             _                           -> (["Kapitan nie dysponuje takim przedmiotem."], status)
                         else (["Kapitan nie dysponuje takim przedmiotem."], status)
