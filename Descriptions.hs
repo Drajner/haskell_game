@@ -97,7 +97,7 @@ tylOgonaFirstSubtext = [
     ]
 
 tylOgonaSecondSubtext =[
-        "Na niebie jest napisane “mcsldctc”, pewnie jakis analfabeta to pisal."
+        "Na niebie jest napisane 'mcsldctc', pewnie jakis analfabeta to pisal."
     ]
 
 tylOgonaSzalikSubtext = [
