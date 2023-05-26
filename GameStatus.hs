@@ -49,3 +49,9 @@ resetFlagInStatus :: GameStatus -> String -> GameStatus
 resetFlagInStatus status flagToSetName = do
     let newFlags = resetFlagByName flagToSetName (getFlags status)
     status {flags = newFlags}
+
+addItemToGameByRoom :: GameStatus -> String -> String -> GameStatus
+addItemToGameByRoom status itemName room = do
+    case findRoomStatus room (getRoomStatuses status) of
+        Just rs -> status {roomStatuses = switchRoomStatus (getRoomStatuses status) (addToRoom rs itemName)}
+        Nothing -> status

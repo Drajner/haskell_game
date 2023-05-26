@@ -9,6 +9,7 @@ import Map (moveCommand)
 import Reading
 import Description
 import Pickup
+import Items
 
                   
 printIntroduction = printLines introductionText
@@ -64,6 +65,11 @@ gameLoop status = do
         "podnies"   -> do  -- i will be back to it
                     let (returningMessage, newStatus) = pickupItem status lastWord
                     putStrLn returningMessage
+                    gameLoop newStatus
+
+        "uzyj"      -> do  -- i will be back to it
+                    let (returningMessage, newStatus) = useItem status lastWord
+                    printLines returningMessage
                     gameLoop newStatus
 
         "otworz"    -> do
@@ -139,7 +145,54 @@ gameLoop status = do
                             printLines repairFailPlaceText
                             gameLoop status
 
-        
+        "wpisz" ->  do
+                    case getPosition status of
+                        "pokoj" -> do
+                            if isFlagSet "skafanderZbadany" (getFlags status) && not (isFlagSet "klodkaOtwarta" (getFlags status))
+                                then case lastWord of
+                                        "2137" -> do
+                                                printLines suitCodeSuccessText
+                                                let newStatus = addItemToGameByRoom status "skafander" "pokoj"
+                                                gameLoop (setFlagInStatus newStatus "klodkaOtwarta")
+                                        _ ->    do
+                                                printLines suitCodeFailText
+                                                gameLoop status
+                                else do
+                                    printLines suitCodeUnknownText
+                                    gameLoop status
+                        
+                        "przod_ogona" -> do
+                            if not (isFlagSet "dolneDrzwiczkiOtwarte" (getFlags status))
+                                then case lastWord of
+                                    "kapibara" -> do
+                                                printLines lookLowerDoorJustOpenText
+                                                let newStatus = addItemToGameByRoom status "kula_do_kregli" "przod_ogona"
+                                                gameLoop (setFlagInStatus newStatus "dolneDrzwiczkiOtwarte")
+                                    _ ->  do
+                                        printLines lookLowerDoorOpenFailText
+                                        gameLoop status
+                                else do
+                                    printLines suitCodeUnknownText
+                                    gameLoop status
+                        
+                        "tyl_ogona" -> do
+                            if not (isFlagSet "skrzynkaNaNarzedziaOtwarta" (getFlags status))
+                                then case lastWord of
+                                    "<>^^>" -> do
+                                                printLines openToolboxText
+                                                let newStatus = addItemToGameByRoom status "klucz_francuski" "tyl_ogona"
+                                                gameLoop (setFlagInStatus newStatus "skrzynkaNaNarzedziaOtwarta")
+                                    _ ->  do
+                                        printLines lookLowerDoorOpenFailText
+                                        gameLoop status
+                                else do
+                                    printLines suitCodeUnknownText
+                                    gameLoop status
+
+                        _ -> do
+                            putStrLn "Nie ma tu nic do wpisania!"
+                            gameLoop status
+
         "chuj"  -> do --debug command
                     putStrLn (getPosition status)
                     gameLoop status

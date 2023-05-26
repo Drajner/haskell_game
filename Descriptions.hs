@@ -97,7 +97,7 @@ tylOgonaFirstSubtext = [
     ]
 
 tylOgonaSecondSubtext =[
-        "Na niebie jest napisane “mcsldctc” pewnie jakis analfabeta to pisal."
+        "Na niebie jest napisane “mcsldctc”, pewnie jakis analfabeta to pisal."
     ]
 
 tylOgonaSzalikSubtext = [
@@ -185,7 +185,7 @@ lookLockersOpenText = [
 
 suitCodeSuccessText = [
     "'Nareszcie... 02.01.2037. Aldona nie moglas czegos latwiejszego wybrac?' - wyrzucil pod nosem Bomba otwierajac zamek.",
-    "Teraz mozna zabrac skafander [komenda podnies]"
+    "Teraz mozna zabrac skafander [komenda podnies]. Aby zalozyc skafander wykorzystaj komende uzyj, a zeby zdjac komende zdejmij."
     ]
 
 suitCodeFailText = [
@@ -255,4 +255,118 @@ lookGlassDoorOpenText = [
     "o | o | >",
     "—--------",
     "^ | ^ | >"
+    ]
+
+lookLowerDoorText = [
+    "Zamkniete, na klódce jest klawiatura literowa do wpisania hasla, limit to 8 znaków. (haslo(dolne_drzwiczki, [haslo]))"
+    ]
+
+lookLowerDoorJustOpenText = [
+    "W srodku jest kula do kregli."
+    ]
+
+lookLowerDoorOpenText = [
+    "Szafka za dolnymi drzwiczkami jest pusta."
+    ]
+
+lookLowerDoorOpenFailText = [
+    "Niestety, wyglada na to ze to haslo nie jest poprawne."
+    ]
+
+openToolboxText = [
+    "Po wcisnieciu tej sekwencji, skrzynka otwiera sie. Wewnatrz znajduje sie klucz_francuski."
+    ]
+
+useSuitText = [
+    "Wpychajac sie w cuchnacy, starozytny juz ekwipunek, zauwazyl, ze przez lepiej wewnatrz tego zlomu nie oddalac sie zanadto od statku, ",
+    "bo bezpieczniej byloby juz pomylic szubienice z bungee. Nie dosc, ze poruszanie sie w tym zelastwie jest trudnoscia, ",
+    "to przez helm absolutnie nic nie slychac i nie da sie rozmawiac."
+    ]
+
+useFishingRodNoHookText = [
+    "Wedka bez haczyka mozna sobie oczywiscie pomachac i poudawac, ze lowi sie ryby, ale nie przyniesie to efektów."
+    ]
+
+useFishingRodText = [
+    "Do lowienia przydalaby sie jeszcze przyneta"
+    ]
+
+useBlueRodSuccessText = [
+    "Potezna wodna bestia wyplynela z silnika i pochwycila niebieska przynete. Kapitan musial sie wysilic by zlapac tego potwora.",
+    "[Do ekwipunku dodano gruba_ryba oraz zamieniono wedka_z_niebieska_przyneta na wedka.]"
+    ]
+
+useRodFailText = [
+    "Nic nie chce chwycic za ta przynete."
+    ]
+
+useBaitFailText = [
+    "Kapitan nie ma jak uzyc tej przynety."
+    ]
+
+useRedBaitSuccessText = [
+    "Bomba zaklada czerwona przynete na wedke",
+    "[Poprzednia wedka staje sie wedka_z_czerwona_przyneta, aby zdjac przynete zdejmij_przynete.]"
+    ]
+
+useGreenBaitSuccessText = [
+    "Bomba zaklada zielona przynete na wedke",
+    "[Poprzednia wedka staje sie wedka_z_zielona_przyneta, aby zdjac przynete zdejmij_przynete.]"
+    ]
+
+useBlueBaitSuccessText = [
+    "Bomba zaklada niebieska przynete na wedke",
+    "[Poprzednia wedka staje sie wedka_z_niebieska_przyneta, aby zdjac przynete zdejmij_przynete.]"
+    ]
+
+removeBaitText = [
+    "Bomba zdejmuje przynete z wedki.",
+    "[Kapitan ponownie zyskuje wedka.]"
+    ]
+
+useHammerOnFishText = [
+    "Kapitan Bomba wielokrotnie uderza mlotkiem w silnik, aby wyploszyc rybe, a ta wyplywa prosto w jego rece.",
+    "[Zdobyto chuda_ryba]"
+    ]
+
+useHammerFailText = [
+    "Brak tu dobrego celu do tluczenia."
+    ]
+
+useHammerGlassDoorText = [
+    "Kapitan zamachnal sie ciezkim przedmiotem i jednym celnym uderzeniem roztrzaskal na kawałki szklane drzwiczki.",
+    "Ktos widocznie gral na tyle w kólko i krzyzyk. W dodatku bardzo nieudolnie.",
+    "'Co za debile, nie wiedzieli jak sie w to gra? Przeciez nawet w nazwie jest kolko i krzyzyk. A tutaj?' - pomyslal",
+    "< | x | o",
+    "—--------",
+    "o | o | >",
+    "—--------",
+    "^ | ^ | >"
+    ]
+
+useHookOnPaintText = [
+    "Na niebie jest napisane “mcsldctc”, pewnie jakis analfabeta to pisal."
+    ]
+
+useHookOnRodText = [
+    "Kapitan przywiazal haczyk do wedki.",
+    "[Z ekwipunku znikaja wedka_bez_haczyka i haczyk, a pojawia sie wedka.]"
+    ]
+
+useHookHintText = [
+    "Co by zrobic z tym haczykiem? Pewnie przydalaby sie jakas wedka..."
+    ]
+
+useLadderText = [
+    "Kapitan po wgramoleniu sie na szczyt drabiny znajduje w skrzyni mlotek."
+    ]
+
+useGeneralFailText = [
+    "Nie ma tu jak uzyc tego przedmiotu"
+    ]
+
+useBallScarfText = [
+    "Kapitan dzieki swej nieograniczonej wyobrazni wklada kule do szalika, aby utworzyc ciezki przedmiot na ksztalt cepa.",
+    "Mozna tym cos rozwalic albo zabic.",
+    "Przedmiot kula_w_szaliku laduje w ekwipunku."
     ]
