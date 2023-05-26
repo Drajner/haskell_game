@@ -273,6 +273,10 @@ lookLowerDoorOpenFailText = [
     "Niestety, wyglada na to ze to haslo nie jest poprawne."
     ]
 
+lookFailText = [
+    "Nie mozna tego obejrzec."
+    ]
+
 openToolboxText = [
     "Po wcisnieciu tej sekwencji, skrzynka otwiera sie. Wewnatrz znajduje sie klucz_francuski."
     ]
@@ -369,6 +373,12 @@ useBallScarfText = [
     "Kapitan dzieki swej nieograniczonej wyobrazni wklada kule do szalika, aby utworzyc ciezki przedmiot na ksztalt cepa.",
     "Mozna tym cos rozwalic albo zabic.",
     "Przedmiot kula_w_szaliku laduje w ekwipunku."
+    ]
+
+useBookText = [
+    "'Ksiazka? Po co to komu?' - zapytal sam siebie Bomba.",
+    "Po chwili spojrzal do srodka i zauwazyl, ze wiele kartek jest wyrwanych.",
+    "'Ah... No tak.'"
     ]
 
 askSebaKitchenText = [
@@ -483,3 +493,4 @@ askSlimFishText = [
 askInSuitText = [
     "Niestety nawet najciezsze bluzgi nie sa w stanie przebic sie przez skafander, wiec próby komunikacji w skafandrze sa skazane na porazke."
     ]
+

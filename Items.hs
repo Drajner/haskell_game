@@ -80,6 +80,8 @@ useItem status item = if item `elem` getInventory status
                                                                             let newStatus = removeFromInventory (removeFromInventory (addToInventory status "wedka") "wedbka_bez_haczyka") "haczyk"
                                                                             (useHookOnRodText, newStatus)
                                                                         else (useHookHintText, status)
+                            "ksiazka"                   -> (useBookText,status)
+                            _                           -> (["Kapitan nie dysponuje takim przedmiotem."], status)
                         else (["Kapitan nie dysponuje takim przedmiotem."], status)
 
 -- need to do zdejmij command

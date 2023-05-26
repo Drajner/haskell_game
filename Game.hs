@@ -10,6 +10,7 @@ import Reading
 import Description
 import Pickup
 import Items
+import Look
 
                   
 printIntroduction = printLines introductionText
@@ -72,7 +73,12 @@ gameLoop status = do
                     printLines returningMessage
                     gameLoop newStatus
 
-        "otworz"    -> do
+        "zobacz"    -> do -- i will be back to it
+                    let (returningMessage, newStatus) = lookAt status lastWord
+                    printLines returningMessage
+                    gameLoop newStatus
+
+        "otworz"    -> do -- need to do lockers
                     if getPosition status == "sluza"
                         then if isFlagSet "sluzaOtwarta" (getFlags status)
                                 then do
@@ -199,6 +205,17 @@ gameLoop status = do
         "dupa" -> do
                     print (isFlagSet "sluzaOtwarta" (getFlags status))
                     print (isFlagSet "skafanderZalozony" (getFlags status))
+                    print (isFlagSet "klodkaOtwarta" (getFlags status))
+                    print (isFlagSet "szafkaJanuszaOtwarta" (getFlags status))
+                    print (isFlagSet "kluczJanuszaWydany" (getFlags status))
+                    print (isFlagSet "chudaRybaZlapana" (getFlags status))
+                    print (isFlagSet "grubaRybaZlapana" (getFlags status))
+                    print (isFlagSet "szklaneDrzwiczkiOtwarte" (getFlags status))
+                    print (isFlagSet "dolneDrzwiczkiOtwarte" (getFlags status))
+                    print (isFlagSet "farbaZdrapana" (getFlags status))
+                    print (isFlagSet "skrzynkaNaNarzedziaOtwarta" (getFlags status))
+                    print (isFlagSet "drabinaPozaSzafa" (getFlags status))
+                    print (isFlagSet "januszGotuje" (getFlags status))
                     gameLoop status
 
         "koniec" -> return ()
