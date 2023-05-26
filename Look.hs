@@ -42,7 +42,7 @@ lookAt status object = case object of
                                         then (lookGlassDoorOpenText, status)
                                         else (lookGlassDoorText, status)
                                 else (lookFailText, status)
-    "dolne_drziwczki"   -> if getPosition status == "przod_ogona"
+    "dolne_drzwiczki"   -> if getPosition status == "przod_ogona"
                                 then (lookLowerDoorOpenText, status)
                                 else (lookFailText, status)
     _                   -> (lookFailText, status)
