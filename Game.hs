@@ -11,6 +11,7 @@ import Description
 import Pickup
 import Items
 import Look
+import Ask (askAbout)
 
                   
 printIntroduction = printLines introductionText
@@ -29,6 +30,8 @@ gameLoop status = do
     cmd <- readCommand
     let cmdWords = words cmd
     let firstWord = head cmdWords
+    let secondWord = head (tail cmdWords)
+    let secondLastWord = last (init cmdWords)
     let lastWord = last cmdWords
     case firstWord of
         "idz"       -> do
@@ -78,48 +81,139 @@ gameLoop status = do
                     printLines returningMessage
                     gameLoop newStatus
 
+        "zapytaj"   -> do
+                    let (returningMessage, newStatus) = askAbout status secondWord lastWord
+                    printLines returningMessage
+                    gameLoop newStatus
+
         "otworz"    -> do -- need to do lockers
-                    if getPosition status == "sluza"
-                        then if isFlagSet "sluzaOtwarta" (getFlags status)
-                                then do
-                                    putStrLn "Nie ma potrzeby otwierac dobrze otwartej sluzy"
-                                    gameLoop status
-                                else if isFlagSet "skafanderZalozony" (getFlags status)
-                                        then do
-                                            let newStatus = setFlagInStatus status "sluzaOtwarta"
-                                            putStrLn "Sluza skrzypiac niemilosiernie, wypelnia sie woda. Po paru chwilach wypelnia sie calkowicie i otwiera wyjscie."
-                                            gameLoop newStatus
-                                        else do 
-                                            printLines sluzaDeathText
-                                            return()
+                    case getPosition status of
+                        "sluza" -> if isFlagSet "sluzaOtwarta" (getFlags status)
+                                    then do
+                                        putStrLn "Nie ma potrzeby otwierac dobrze otwartej sluzy"
+                                        gameLoop status
+                                    else if isFlagSet "skafanderZalozony" (getFlags status)
+                                            then do
+                                                let newStatus = setFlagInStatus status "sluzaOtwarta"
+                                                putStrLn "Sluza skrzypiac niemilosiernie, wypelnia sie woda. Po paru chwilach wypelnia sie calkowicie i otwiera wyjscie."
+                                                gameLoop newStatus
+                                            else do 
+                                                printLines sluzaDeathText
+                                                return()
 
-                        else do
-                            putStrLn "Nie ma tu czego otwierać!"
+                        "pokoj" -> if secondLastWord == "szafkę" || secondLastWord == "szafke" 
+                                    then case lastWord of
+                                            "janusza"   -> if isFlagSet "szafkaJanuszOtwarta" (getFlags status)
+                                                            then do
+                                                                printLines openJanuszLockerAgainText
+                                                                gameLoop status
+                                                            else if "klucz_do_szafki_janusza" `elem` getInventory status
+                                                                    then do
+                                                                        printLines openJanuszLockerText
+                                                                        let newStatus = addItemToGameByRoom (addItemToGameByRoom status "wedka_bez_haczyka" "pokoj") "czerwona_przyneta" "pokoj"
+                                                                        let newStatus1 = addItemToGameByRoom (addItemToGameByRoom newStatus "zielona_przyneta" "pokoj") "niebieska_przyneta" "pokoj"
+                                                                        let newStatus2 = setFlagInStatus (removeFromInventory newStatus1 "klucz_do_szafki_janusza") "szafkaJanuszaOtwarta"
+                                                                        gameLoop newStatus2
+                                                                    else do
+                                                                        printLines openJanuszLockerFailText
+                                                                        gameLoop status
+
+                                            
+                                            "Janusza"   -> if isFlagSet "szafkaJanuszOtwarta" (getFlags status)
+                                                            then do
+                                                                printLines openJanuszLockerAgainText
+                                                                gameLoop status
+                                                            else if "klucz_do_szafki_janusza" `elem` getInventory status
+                                                                    then do
+                                                                        printLines openJanuszLockerText
+                                                                        let newStatus = addItemToGameByRoom (addItemToGameByRoom status "wedka_bez_haczyka" "pokoj") "czerwona_przyneta" "pokoj"
+                                                                        let newStatus1 = addItemToGameByRoom (addItemToGameByRoom newStatus "zielona_przyneta" "pokoj") "niebieska_przyneta" "pokoj"
+                                                                        let newStatus2 = setFlagInStatus (removeFromInventory newStatus1 "klucz_do_szafki_janusza") "szafkaJanuszaOtwarta"
+                                                                        gameLoop newStatus2
+                                                                    else do
+                                                                        printLines openJanuszLockerFailText
+                                                                        gameLoop status
+
+                                            "Seby"      -> do
+                                                            printLines openSebaLockerText
+                                                            gameLoop status
+                                            "seby"      -> do
+                                                            printLines openSebaLockerText
+                                                            gameLoop status
+                                    else do
+                                        putStrLn "Czyja szafke?"
+                                        gameLoop status
+
+                        _ -> do
+                            putStrLn "Nie ma tu czego otwierac!"
                             gameLoop status
-        "otwórz"    ->do
-                    if getPosition status == "sluza"
-                        then if isFlagSet "sluzaOtwarta" (getFlags status)
-                                then do
-                                    putStrLn "Nie ma potrzeby otwierac dobrze otwartej sluzy"
-                                    gameLoop status
-                                else if isFlagSet "skafanderZalozony" (getFlags status)
-                                        then do
-                                            let newStatus = setFlagInStatus status "sluzaOtwarta"
-                                            putStrLn "Sluza skrzypiac niemilosiernie, wypelnia sie woda. Po paru chwilach wypelnia sie calkowicie i otwiera wyjscie."
-                                            gameLoop newStatus
-                                        else do 
-                                            printLines sluzaDeathText
-                                            return()
+        "otwórz"    ->do -- need to do lockers
+                    case getPosition status of
+                        "sluza" -> if isFlagSet "sluzaOtwarta" (getFlags status)
+                                    then do
+                                        putStrLn "Nie ma potrzeby otwierac dobrze otwartej sluzy"
+                                        gameLoop status
+                                    else if isFlagSet "skafanderZalozony" (getFlags status)
+                                            then do
+                                                let newStatus = setFlagInStatus status "sluzaOtwarta"
+                                                putStrLn "Sluza skrzypiac niemilosiernie, wypelnia sie woda. Po paru chwilach wypelnia sie calkowicie i otwiera wyjscie."
+                                                gameLoop newStatus
+                                            else do 
+                                                printLines sluzaDeathText
+                                                return()
 
-                        else do
-                            putStrLn "Nie ma tu czego otwierać!"
+                        "pokoj" -> if secondLastWord == "szafkę" || secondLastWord == "szafke" 
+                                    then case lastWord of
+                                            "janusza"   -> if isFlagSet "szafkaJanuszOtwarta" (getFlags status)
+                                                            then do
+                                                                printLines openJanuszLockerAgainText
+                                                                gameLoop status
+                                                            else if "klucz_do_szafki_janusza" `elem` getInventory status
+                                                                    then do
+                                                                        printLines openJanuszLockerText
+                                                                        let newStatus = addItemToGameByRoom (addItemToGameByRoom status "wedka_bez_haczyka" "pokoj") "czerwona_przyneta" "pokoj"
+                                                                        let newStatus1 = addItemToGameByRoom (addItemToGameByRoom newStatus "zielona_przyneta" "pokoj") "niebieska_przyneta" "pokoj"
+                                                                        let newStatus2 = setFlagInStatus (removeFromInventory newStatus1 "klucz_do_szafki_janusza") "szafkaJanuszaOtwarta"
+                                                                        gameLoop newStatus2
+                                                                    else do
+                                                                        printLines openJanuszLockerFailText
+                                                                        gameLoop status
+
+                                            
+                                            "Janusza"   -> if isFlagSet "szafkaJanuszOtwarta" (getFlags status)
+                                                            then do
+                                                                printLines openJanuszLockerAgainText
+                                                                gameLoop status
+                                                            else if "klucz_do_szafki_janusza" `elem` getInventory status
+                                                                    then do
+                                                                        printLines openJanuszLockerText
+                                                                        let newStatus = addItemToGameByRoom (addItemToGameByRoom status "wedka_bez_haczyka" "pokoj") "czerwona_przyneta" "pokoj"
+                                                                        let newStatus1 = addItemToGameByRoom (addItemToGameByRoom newStatus "zielona_przyneta" "pokoj") "niebieska_przyneta" "pokoj"
+                                                                        let newStatus2 = setFlagInStatus (removeFromInventory newStatus1 "klucz_do_szafki_janusza") "szafkaJanuszaOtwarta"
+                                                                        gameLoop newStatus2
+                                                                    else do
+                                                                        printLines openJanuszLockerFailText
+                                                                        gameLoop status
+
+                                            "Seby"      -> do
+                                                            printLines openSebaLockerText
+                                                            gameLoop status
+                                            "seby"      -> do
+                                                            printLines openSebaLockerText
+                                                            gameLoop status
+                                    else do
+                                        putStrLn "Czyja szafke?"
+                                        gameLoop status
+
+                        _ -> do
+                            putStrLn "Nie ma tu czego otwierac!"
                             gameLoop status
         "zamknij"   -> do
                     if getPosition status == "sluza"
                         then if isFlagSet "sluzaOtwarta" (getFlags status)
                                 then do
                                     let newStatus = resetFlagInStatus status "sluzaOtwarta"
-                                    putStrLn "Sluza skrzypiac niemilosiernie, wypelnia sie woda. Po paru chwilach wypelnia sie calkowicie i otwiera wyjscie."
+                                    putStrLn "Maszyneria z duzym trudem wymienia wode na powietrze. Po sporym oczekiwaniu wrota na statek otwieraja sie."
                                     gameLoop newStatus
                                 else do
                                     putStrLn "Ta sluza bardziej sie juz nie zamknie."

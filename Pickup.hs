@@ -9,12 +9,16 @@ polishCompensationItem cmdWords = do
     case lastWord of
         "skafander" -> "skafander"
         "janusza"   -> "klucz_do_szafki_janusza"
-        "przyneta"  -> 
+        "przyneta"  -> "przyneta"
+        "przynęta"  -> 
         "wedka"     ->
+        "wedke"     ->
         "haczyka"   ->
+        "wedke_bez_haczyka" ->
+        "wedka_bez_haczyka" ->
         "drabine"   ->
         "drabina"   ->
-        "haczyk"    ->
+        "haczyk"    -> 
         "szalik"    ->
         "ksiazke"   ->
         "książkę"   ->
@@ -38,8 +42,8 @@ polishCompensationItem cmdWords = do
         "śrubokret" ->
         "śrubokręt" ->
         "srubokręt" ->
-            -}
-
+        _           ->
+-}
 pickupItem :: GameStatus -> String -> (String, GameStatus)
 pickupItem status itemToTake = do
     let currentRoomStatus = findRoomStatus (getPosition status) (getRoomStatuses status)

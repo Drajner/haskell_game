@@ -494,3 +494,10 @@ askInSuitText = [
     "Niestety nawet najciezsze bluzgi nie sa w stanie przebic sie przez skafander, wiec próby komunikacji w skafandrze sa skazane na porazke."
     ]
 
+
+askSebaHint = [
+    "Sebe mozna zapytac o :",
+    "skafander",
+    "kuchnie",
+    "szafke"
+    ]
