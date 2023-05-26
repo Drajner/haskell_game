@@ -370,3 +370,116 @@ useBallScarfText = [
     "Mozna tym cos rozwalic albo zabic.",
     "Przedmiot kula_w_szaliku laduje w ekwipunku."
     ]
+
+askSebaKitchenText = [
+    "'Seba, zajmij sie kuchnia! Jest tam potworny syf!' - rozkazal kapitan.",
+    "'Panie kapitanie teraz jest tura Janusz, ja mylem ostatnio...' - odrzekl Seba.",
+    "'Racja, sprawiedliwosc musi byc'"
+    ]
+
+askJanuszKitchenText = [
+    "'Janusz zajmij sie kuchnia! Jest tam potworny syf!' - rozkazal kapitan.",
+    "'Ale panie kapitanie, przeciez i tak nie mamy juz jedzenia. Prowiant nam sie skonczyl juz wczoraj, a ",
+    "jak mielismy zamawiac hot-dogi na stacji to zobaczylismy tego gnoja i musielismy ruszac' - odpowiedzial Janusz.",
+    "'No tak, rzeczywiscie.' "
+    ]
+
+askSebaLockerText = [
+    "'Daj mi klucz do swojej szafki Seba!' - rozkazal kapitan.",
+    "'Bardzo bym chcial panie kapitanie, ale ukradli mi go tydzien temu.' - odparl Seba.",
+    "'Niech to szlag.'"
+    ]
+
+askJanuszLockerText = [
+    "'Daj mi klucz do swojej szafki Janusz!' - rozkazal kapitan.",
+    "'Oczywiscie panie kapitanie. Tylko niech pan uwaza, bo zamek sie zacina.' - odparl Janusz.",
+    "[Do ekwipunku dodano klucz_do_szafki_janusza]"
+    ]
+
+askJanuszLockerTwiceText = [
+    "'Daj mi klucz do swojej szafki Janusz!' - rozkazal kapitan.",
+    "'Panie kapitanie, przed chwila to zrobilem. Zapomnial pan?' - odparl Janusz.",
+    "'Oczywiscie ze nie, sprawdzam twoja czujnosc.'"
+    ]
+
+askSebaSuitText = [
+    "'Seba co wiesz o tym skafandrze?' - zapytal Bomba.",
+    "'Tak widzialem jak ostatnio panska zona przy nim grzebala jak pana nie bylo.' - powiedzial Seba.",
+    "'To nie brzmi dobrze...'"
+    ]
+
+askJanuszSuitText = [
+    "'Janusz co wiesz o tym skafandrze?' - zapytal Bomba.",
+    "'Tak naprawde to nie wiele.' - powiedzial Janusz.",
+    "'Hmm...'"
+    ]
+
+askJanuszSlimFishText = [
+    "'Janusz co mozesz mi powiedziec o tej rybie?' - zapytal Bomba.",
+    "'To bardzo ciekawy okaz. Czytalem kiedys w czasopismie, ze samce i samice tego gatunku bardzo sie od siebie róznia.",
+    "Samce sa male, chuderlawe i pelne osci. Samice za to sa grube i pelne miesa. Taka samica to by sie czlowiek najadl...",
+    "I to nie jeden! Jakby pan jakas znalazl, to mielibysmy pyszna kolacje.",
+    "Zakladam, ze jesli jest tu samiec to pewnie i samica by sie znalazla, bo te stworzenia zazwyczaj sa spotykane w parach.' - opowiadal Janusz."
+    ]
+
+askJanuszFatFishText = [
+    "'Cóz za piekna ryba!' - odparl Janusz po wzieciu samicy do rak. - 'Od razu zabieram sie do kuchni.",
+    "Jezu jaki ja jestem glodny! Niech mi pan da i te druga, bedzie na przystawke.'",
+    "Kapitan przekazal zolnierzowi dwie ryby, a ten predko przeniósl sie do kuchni.",
+    "Ryby byly abyt zajete klótnia pomiedzy soba, zeby odnotowac zmiane.",
+    "Na siedzeniu, które do niedawna zajmowal, znajdowal sie srubokret.",
+    "[Ryby zostaly oddane, do ekwipunku dodano srubokret.]"
+    ]
+
+askJanuszRodNoHookText = [
+    "'Janusz, gdzie do cholery jest haczyk?' - spytal kapitan.",
+    "'To, panie kapitanie, jest dobre pytanie. Wiem, ze pakowalem go na statek, wiec powinien gdzies byc.' - odrzekl Janusz.",
+    "'No zobaczymy.'"
+    ]
+
+askJanuszRodText = [
+    "'Panie kapitanie, ta wedka to istny cud techniki, mozna nia lowic nawet pod woda!' - zareklamowal Janusz.",
+    "'Bardzo mnie to cieszy' - powiedzial Bomba, bez wyraznej radosci w glosie."
+    ]
+
+askJanuszBaitText = [
+    "'Janusz, oswiec mnie, co to za przynety?' - zapytal Bomba.",
+    "'Panie Kapitanie, czerwona to kawalek miesa, niebieska to zmielone robaki, a zielona to kosmiczny ziemniak. Mam nadzieje, ze to w czyms pomoze...' - odrzekl Janusz."
+    ]
+
+askFatFishText = [
+    "Niestety dzwieki opuszczajace otwór gebowy grubej ryby nie sa zrozumiale dla kapitana Bomby. Szczególnie na trzezwo."
+    ]
+
+askSlimFishWifeText = [
+    "'Kim jest twoja zona?' - zapytal Bomba nie wiedzac na co sie pisze.",
+    "'Ahh Marzena... Moja byla zona... Poznalismy sie na dyskotece 10 lat temu. Wtedy jeszcze nie byla tak potwornie gruba. ",
+    "Co prawda juz wtedy byla wredna, ale mi to nie przeszkadzalo. Bylem wtedy glupi. Teraz nadal jestem, ale mniejsza o to. ",
+    "Po roku wzielismy slub i zamieszkalismy razem. Wiedlismy srednio szczesliwe zycie, az do tego roku. ",
+    "Niestety nasze *mieszkanie* zostalo zniszczone przez wieloryba i musielismy uciekac. Wtedy zaczely sie problemy. ",
+    "Marzena uznala, ze jestem nieudacznikiem zyciowym i ze odchodzi. Kiedy mi to mówila, spadlo tu to wspaniale *mieszkanie*. ",
+    "Z braku innych lokali zdecydowalismy sie tu zamieszkac.  Ja po lewej, ona po prawej.' - paplala ryba."
+    ]
+
+askSlimFishFlatText = [
+    "'To mieszkanie to silniki mojego statku. Macie je natychmiast opuscic!' - huknal kapitan.",
+    "'NIE LICZ NA TO PODlA GNIDO!' - krzyczalo stworzenie - 'Moja zona nigdy nie opusci drugiego mieszkania. Jest na to zbyt leniwa.",
+    "Tylko jedzenie moze ja zmusic do ruszenia sie z domu. Kiedys raz na ruski rok udawalo mi sie ja wyciagnac z domu, ",
+    "ale od czasu separacji nic jej nie ruszy. Tak, separacja, tak to nazywa. Chociaz dla mnie móglby to byc zwyczajny rozwód. Mam juz jej dosc. Jest prawie jak moja *matka*.'"
+    ]
+
+askSlimFishMomText = [
+    "'Dlaczego jest jak twoja matka?' - zabrnal dalej zirytowany juz Bomba.",
+    "'Obie sa grube i leniwe. Tylko by zarly... i to ciagle i ciagle. Na dodatek wybredne sa, byle czego nie zjedza. Warzywa - zle, owoce - zle, mieso - zle.",
+    "Tylko wiecznie te robaki i robaki. Ile mozna zrec robactwo? Przeciez tak nie da sie zyc!.'",
+    "'Czyli na robaki necic...' - wyrzucil pod nosem Tytus."
+    ]
+
+askSlimFishText = [
+    "'ZOSTAW MNIE TY BYDLAKU! MOJA *ZONA* CI TEGO NIE WYBACZY! Znaczy moja byla *zona*... ",
+    "Marzena odeszla ode mnie juz jakis czas temu. Gruba baba...' - darla sie ryba, bez uwagi na to co mówil kapitan."
+    ]
+
+askInSuitText = [
+    "Niestety nawet najciezsze bluzgi nie sa w stanie przebic sie przez skafander, wiec próby komunikacji w skafandrze sa skazane na porazke."
+    ]
