@@ -73,8 +73,8 @@ getJanuszHintText status = do
         then ["wedka_bez_haczyka"]
         else []
 
-polishCompensationDialogue :: [String] -> String
-polishCompensationDialogue cmdWords = case head (tail cmdWords) of
+polishCompensationAsked :: [String] -> String
+polishCompensationAsked cmdWords = case head (tail cmdWords) of
     "Janusza" -> "janusz"
     "janusza" -> "janusz"
     "janusz" -> "janusz"
@@ -100,3 +100,75 @@ polishCompensationDialogue cmdWords = case head (tail cmdWords) of
     "gruba_rybą" -> "gruba_ryba"
     "grubą_ryba" -> "gruba_ryba"
     "gruba_rybą" -> "gruba_ryba"
+    _ -> head (tail cmdWords)
+
+polishCompensationTopic :: [String] -> String
+polishCompensationTopic cmdWords = case last cmdWords of
+    "szafki" -> "szafka"
+    "szafke" -> "szafka"
+    "szafkę" -> "szafka"
+    "szafka" -> "szafka"
+    "kuchnia" -> "kuchnia"
+    "kuchnie" -> "kuchnia"
+    "kuchnię" -> "kuchnia"
+    "wedka"     ->  if "haczyka" `elem` cmdWords
+                        then "wedka_bez_haczyka"
+                        else "wedka"
+    "wedke"     ->  if "haczyka" `elem` cmdWords
+                        then "wedka_bez_haczyka"
+                        else "wedka"
+    "wedkę"     ->  if "haczyka" `elem` cmdWords
+                        then "wedka_bez_haczyka"
+                        else "wedka"
+    "wędkę"     ->  if "haczyka" `elem` cmdWords
+                        then "wedka_bez_haczyka"
+                        else "wedka"
+    "wędke"     ->  if "haczyka" `elem` cmdWords
+                        then "wedka_bez_haczyka"
+                        else "wedka"
+    "wedki"     ->  if "haczyka" `elem` cmdWords
+                        then "wedka_bez_haczyka"
+                        else "wedka"
+    "wędki"     ->  if "haczyka" `elem` cmdWords
+                        then "wedka_bez_haczyka"
+                        else "wedka"
+    "haczyka"   -> if ("wedka" `elem` cmdWords || "wędka" `elem` cmdWords) && "bez" `elem` cmdWords
+                        then "wedka_bez_haczyka"
+                        else last cmdWords
+    "wedke_bez_haczyka" -> "wedka_bez_haczyka"
+    "wedkę_bez_haczyka" -> "wedka_bez_haczyka"
+    "wędkę_bez_haczyka" -> "wedka_bez_haczyka"
+    "wędke_bez_haczyka" -> "wedka_bez_haczyka"
+    "przyneta" -> "przynety"
+    "przynety" -> "przynety"
+    "przynęty" -> "przynety"
+    "przynęta" -> "przynety"
+    "przynętę" -> "przynety"
+    "przynete" -> "przynety"
+    "przynetę" -> "przynety"
+    "przynęte" -> "przynety"
+    "ryba"      -> if "chuda" `elem` cmdWords || "chudą"  `elem` cmdWords
+                        then "chuda_ryba"
+                        else if "gruba" `elem` cmdWords || "grubą"  `elem` cmdWords
+                            then "gruba_ryba"
+                            else last cmdWords
+    "rybe"      -> if "chuda" `elem` cmdWords || "chudą"  `elem` cmdWords
+                        then "chuda_ryba"
+                        else if "gruba" `elem` cmdWords || "grubą"  `elem` cmdWords
+                            then "gruba_ryba"
+                            else last cmdWords
+    "rybę"      -> if "chuda" `elem` cmdWords || "chudą"  `elem` cmdWords
+                        then "chuda_ryba"
+                        else if "gruba" `elem` cmdWords || "grubą"  `elem` cmdWords
+                            then "gruba_ryba"
+                            else last cmdWords
+    "zona" -> "zona"
+    "żona" -> "zona"
+    "zone" -> "zona"
+    "żonę" -> "zona"
+    "żone" -> "zona"
+    "zonę" -> "zona"
+    "matka" -> "matka"
+    "matkę" -> "matka"
+    "matke" -> "matka"
+    _ -> last cmdWords
