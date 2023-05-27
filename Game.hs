@@ -91,8 +91,9 @@ gameLoop status = do
                     printLines returningMessage
                     gameLoop newStatus
 
-        "zobacz"    -> do -- i will be back to it
-                    let (returningMessage, newStatus) = lookAt status lastWord
+        "zobacz"    -> do 
+                    let processedCommand = polishCompensationObjects cmdWords
+                    let (returningMessage, newStatus) = lookAt status processedCommand
                     printLines returningMessage
                     gameLoop newStatus
 
