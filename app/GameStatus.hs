@@ -2,7 +2,6 @@ module GameStatus where
 
 import Flag
 import RoomStatus
-import Control.Monad.State
 
 data GameStatus = GameStatus
     { currentPosition :: String

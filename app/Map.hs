@@ -1,6 +1,5 @@
 module Map where
 
-import Control.Monad.State
 import Flag
 import GameStatus (GameStatus, getPosition, getFlags, setPosition)
 
