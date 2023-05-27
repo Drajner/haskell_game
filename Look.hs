@@ -46,3 +46,23 @@ lookAt status object = case object of
                                 then (lookLowerDoorOpenText, status)
                                 else (lookFailText, status)
     _                   -> (lookFailText, status)
+
+
+polishCompensationObjects :: [String] -> String
+polishCompensationObjects cmdWords = case last cmdWords of
+    "szafki" -> "szafka"
+    "szafke" -> "szafka"
+    "szafkę" -> "szafka"
+    "szafka" -> "szafka"
+    "kuchnia" -> "kuchnia"
+    "kuchnie" -> "kuchnia"
+    "kuchnię" -> "kuchnia"
+    "szafe" -> "szafa"
+    "szafę" -> "szafa"
+    "szafa" -> "szafa"
+    "drzwiczki" -> if "szklane" `elem` cmdWords
+                        then "szklane_drzwiczki"
+                        else if "dolne" `elem` cmdWords
+                                then "dolne_drzwiczki"
+                                else last cmdWords
+    _ -> last cmdWords
