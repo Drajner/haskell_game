@@ -72,3 +72,31 @@ getJanuszHintText status = do
       if "wedka_bez_haczyka" `elem` getInventory status
         then ["wedka_bez_haczyka"]
         else []
+
+polishCompensationDialogue :: [String] -> String
+polishCompensationDialogue cmdWords = case head (tail cmdWords) of
+    "Janusza" -> "janusz"
+    "janusza" -> "janusz"
+    "janusz" -> "janusz"
+    "Janusz" -> "janusz"
+    "Sebe" -> "seba"
+    "Sebę" -> "seba"
+    "sebe" -> "seba"
+    "sebę" -> "seba"
+    "seba" -> "seba"
+    "Seba" -> "seba"
+    "ryba" -> if "gruba" `elem` cmdWords || "grubą" `elem` cmdWords 
+                then "gruba_ryba"
+                else "chuda_ryba"
+    "rybę" -> if "gruba" `elem` cmdWords || "grubą" `elem` cmdWords 
+                then "gruba_ryba"
+                else "chuda_ryba"
+    "rybe" -> if "gruba" `elem` cmdWords || "grubą" `elem` cmdWords 
+                then "gruba_ryba"
+                else "chuda_ryba"
+    "chudą_rybą" -> "chuda_ryba"
+    "chudą_ryba" -> "chuda_ryba"
+    "chuda_rybą" -> "chuda_ryba"
+    "gruba_rybą" -> "gruba_ryba"
+    "grubą_ryba" -> "gruba_ryba"
+    "gruba_rybą" -> "gruba_ryba"

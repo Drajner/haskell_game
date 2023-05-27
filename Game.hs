@@ -5,7 +5,7 @@ import GameStatus
 import Descriptions
 import Flag
 import RoomStatus
-import Map (moveCommand)
+import Map (moveCommand, polishCompensationMap)
 import Reading
 import Description
 import Pickup
@@ -67,13 +67,15 @@ gameLoop status = do
                         gameLoop status
 
 
-        "podnies"   -> do  -- i will be back to it
-                    let (returningMessage, newStatus) = pickupItem status lastWord
+        "podnies"   -> do
+                    let processedCommand = polishCompensationItem cmdWords
+                    let (returningMessage, newStatus) = pickupItem status processedCommand
                     putStrLn returningMessage
                     gameLoop newStatus
 
-        "uzyj"      -> do  -- i will be back to it
-                    let (returningMessage, newStatus) = useItem status lastWord
+        "uzyj"      -> do
+                    let processedCommand = polishCompensationItem cmdWords
+                    let (returningMessage, newStatus) = useItem status processedCommand
                     printLines returningMessage
                     gameLoop newStatus
 
