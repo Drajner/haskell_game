@@ -318,25 +318,6 @@ gameLoop status = do
                         then return ()
                         else gameLoop newStatus
 
-        "chuj"  -> do --debug command
-                    putStrLn (getPosition status)
-                    gameLoop status
-        "dupa" -> do
-                    print (isFlagSet "sluzaOtwarta" (getFlags status))
-                    print (isFlagSet "skafanderZalozony" (getFlags status))
-                    print (isFlagSet "klodkaOtwarta" (getFlags status))
-                    print (isFlagSet "szafkaJanuszaOtwarta" (getFlags status))
-                    print (isFlagSet "kluczJanuszaWydany" (getFlags status))
-                    print (isFlagSet "chudaRybaZlapana" (getFlags status))
-                    print (isFlagSet "grubaRybaZlapana" (getFlags status))
-                    print (isFlagSet "szklaneDrzwiczkiOtwarte" (getFlags status))
-                    print (isFlagSet "dolneDrzwiczkiOtwarte" (getFlags status))
-                    print (isFlagSet "farbaZdrapana" (getFlags status))
-                    print (isFlagSet "skrzynkaNaNarzedziaOtwarta" (getFlags status))
-                    print (isFlagSet "drabinaPozaSzafa" (getFlags status))
-                    print (isFlagSet "januszGotuje" (getFlags status))
-                    gameLoop status
-
         "koniec" -> return ()
         _ -> do printLines ["Nieznana komenda", ""]
                 gameLoop status
