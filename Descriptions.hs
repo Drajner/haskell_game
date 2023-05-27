@@ -25,15 +25,15 @@ introductionText = [
 
 instructionsText = [
     "KOMENDY:",
-    "idz - pozwala poruszac sie po statku i nie tylko (dostepne miejsca to dziob, pokoj, przod_ogona, tyl_ogona, sluza, skrzydlo_prawe, skrzydlo_lewe), przyklady: idz do pokoju, idz na dziob",
+    "idz - pozwala poruszac sie po statku i nie tylko (dostepne miejsca to dziob, pokoj, przod ogona, tyl ogona, sluza, skrzydlo prawe, skrzydlo lewe), przyklady: idz do pokoju, idz na dziob",
     "opis - wyswietla opis miejsca",
-    "uzyj(przedmiot/obiekt). - uzywa pojedynczego przedmiotu (w przypadku skafandra uzycie oznacza zalozenie lub zdjecie), czasem pozwala na dolaczenie mniejszego przedmiotu do posiadanego wiekszego",
-    "podnies(przdmiot) - pozwala wziac przedmiot do ekwipunku",
+    "uzyj - uzywa pojedynczego przedmiotu (w przypadku skafandra uzycie oznacza zalozenie lub zdjecie), czasem pozwala na dolaczenie mniejszego przedmiotu do posiadanego wiekszego, przyklad: uzyj mlotka",
+    "podnies - pozwala wziac przedmiot do ekwipunku, przyklad: podnies zielona przynete",
     "ekwipunek - wypisuje przedmioty ktore sa w ekwipunku",
-    "zobacz(obiekt) - pozwala przyjrzec sie obiektowi lub kierunkowi",
-    "rozmawiaj(rozmowca, temat) - pozwala na rozmowe z swiadomymi stworzeniami, o tematach im znanych (np. zolnierze i wyposazenie pokoju, janusz tematy wedkarskie)",
-    "napraw_silnik. - pozwala naprawic silnik i ukonczyc gre, gdy w posiadaniu sa mlotek, srubokret i klucz-francuski, a takze jest sie na dziobie",
-    "instrukcja. - pokazuje liste komend",
+    "zobacz - pozwala przyjrzec sie obiektowi lub kierunkowi, przyklad: zobacz kuchnie",
+    "zapytaj - pozwala na rozmowe z swiadomymi stworzeniami, o tematach im znanych (np. zolnierze i wyposazenie pokoju, janusz tematy wedkarskie), przyklad: zapytaj janusza o szafke ",
+    "napraw - pozwala naprawic silnik i ukonczyc gre, gdy w posiadaniu sa mlotek, srubokret i klucz-francuski, a takze jest sie na dziobie",
+    "instrukcja - pokazuje liste komend",
     "koniec          - ciekawe co robi ta komenda?",
     "Inne komendy moga sie pojawic w odpowiednim dla nich momencie.",
     ""
@@ -185,7 +185,7 @@ lookLockersOpenText = [
 
 suitCodeSuccessText = [
     "'Nareszcie... 02.01.2037. Aldona nie moglas czegos latwiejszego wybrac?' - wyrzucil pod nosem Bomba otwierajac zamek.",
-    "Teraz mozna zabrac skafander [komenda podnies]. Aby zalozyc skafander wykorzystaj komende uzyj, a zeby zdjac komende zdejmij."
+    "Teraz mozna zabrac skafander [komenda podnies]. Aby zalozyc skafander wykorzystaj komende uzyj skafander, a zeby zdjac komende zdejmij skafander."
     ]
 
 suitCodeFailText = [
@@ -258,7 +258,7 @@ lookGlassDoorOpenText = [
     ]
 
 lookLowerDoorText = [
-    "Zamkniete, na klódce jest klawiatura literowa do wpisania hasla, limit to 8 znaków. (haslo(dolne_drzwiczki, [haslo]))"
+    "Zamkniete, na klódce jest klawiatura literowa do wpisania hasla, limit to 8 znaków. [Uzyj komendy wpisz [haslo]]"
     ]
 
 lookLowerDoorJustOpenText = [
@@ -310,17 +310,17 @@ useBaitFailText = [
 
 useRedBaitSuccessText = [
     "Bomba zaklada czerwona przynete na wedke",
-    "[Poprzednia wedka staje sie wedka_z_czerwona_przyneta, aby zdjac przynete zdejmij_przynete.]"
+    "[Poprzednia wedka staje sie wedka_z_czerwona_przyneta, aby zdjac przynete zdejmij przynete.]"
     ]
 
 useGreenBaitSuccessText = [
     "Bomba zaklada zielona przynete na wedke",
-    "[Poprzednia wedka staje sie wedka_z_zielona_przyneta, aby zdjac przynete zdejmij_przynete.]"
+    "[Poprzednia wedka staje sie wedka_z_zielona_przyneta, aby zdjac przynete zdejmij przynete.]"
     ]
 
 useBlueBaitSuccessText = [
     "Bomba zaklada niebieska przynete na wedke",
-    "[Poprzednia wedka staje sie wedka_z_niebieska_przyneta, aby zdjac przynete zdejmij_przynete.]"
+    "[Poprzednia wedka staje sie wedka_z_niebieska_przyneta, aby zdjac przynete zdejmij przynete.]"
     ]
 
 removeBaitText = [
