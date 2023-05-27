@@ -43,17 +43,19 @@ lookAt status object = case object of
                                         else (lookGlassDoorText, status)
                                 else (lookFailText, status)
     "dolne_drzwiczki"   -> if getPosition status == "przod_ogona"
-                                then (lookLowerDoorOpenText, status)
+                                then if isFlagSet "dolneDrzwiczkiOtwarte" (getFlags status)
+                                        then (lookLowerDoorOpenText, status)
+                                        else (lookLowerDoorText, status)
                                 else (lookFailText, status)
     _                   -> (lookFailText, status)
 
 
 polishCompensationObjects :: [String] -> String
 polishCompensationObjects cmdWords = case last cmdWords of
-    "szafki" -> "szafka"
-    "szafke" -> "szafka"
-    "szafkę" -> "szafka"
-    "szafka" -> "szafka"
+    "szafki" -> "szafki"
+    "szafke" -> "szafki"
+    "szafkę" -> "szafki"
+    "szafka" -> "szafki"
     "kuchnia" -> "kuchnia"
     "kuchnie" -> "kuchnia"
     "kuchnię" -> "kuchnia"

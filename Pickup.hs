@@ -125,17 +125,20 @@ polishCompensationItem cmdWords = do
         "wędki"     ->  if "haczyka" `elem` cmdWords
                             then "wedka_bez_haczyka"
                             else "wedka"
-        "haczyka"   -> if ("wedka" `elem` cmdWords || "wędka" `elem` cmdWords || "wędke" `elem` cmdWords || "wędkę" `elem` cmdWords) && "bez" `elem` cmdWords
+        "haczyka"   -> if ("wedka" `elem` cmdWords || "wędka" `elem` cmdWords || "wędke" `elem` cmdWords || "wędkę" `elem` cmdWords || "wedke" `elem` cmdWords || "wedkę" `elem` cmdWords) && "bez" `elem` cmdWords
                             then "wedka_bez_haczyka"
                             else "haczyk"
         "wedke_bez_haczyka" -> "wedka_bez_haczyka"
         "wedkę_bez_haczyka" -> "wedka_bez_haczyka"
         "wędkę_bez_haczyka" -> "wedka_bez_haczyka"
         "wędke_bez_haczyka" -> "wedka_bez_haczyka"
-        "drabine"   -> "drabine"
+        "drabine"   -> "drabina"
+        "drabinę"   -> "drabina"
         "drabina"   -> "drabina"
+        "drabiny"   -> "drabina"
         "haczyk"    -> "haczyk"
         "szalik"    -> "szalik"
+        "szalika"    -> "szalik"
         "ksiazke"   -> "ksiazke"
         "książkę"   -> "ksiazke"
         "ksiażkę"   -> "ksiazke"
@@ -183,7 +186,7 @@ polishCompensationItem cmdWords = do
         "mlotka"    -> "mlotek"
         "młotka"    -> "mlotek"
         "szaliku"   -> if "kula" `elem` cmdWords || "kule" `elem` cmdWords || "kulę" `elem` cmdWords || "kuli" `elem` cmdWords
-                        then "kula_w_szliku"
+                        then "kula_w_szaliku"
                         else lastWord
         "kuli_w_szaliku" -> "kula_w_szaliku"
         "srubokret" -> "srubokret"

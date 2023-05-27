@@ -94,6 +94,18 @@ polishCompensationAsked cmdWords = case head (tail cmdWords) of
     "rybe" -> if "gruba" `elem` cmdWords || "grubą" `elem` cmdWords 
                 then "gruba_ryba"
                 else "chuda_ryba"
+    "chuda" -> if "ryba" `elem` cmdWords || "rybe" `elem` cmdWords || "rybę" `elem` cmdWords
+                then "chuda_ryba"
+                else head (tail cmdWords)
+    "chudą" -> if "ryba" `elem` cmdWords || "rybe" `elem` cmdWords || "rybę" `elem` cmdWords
+                then "chuda_ryba"
+                else head (tail cmdWords)
+    "gruba" -> if "ryba" `elem` cmdWords || "rybe" `elem` cmdWords || "rybę" `elem` cmdWords
+                then "gruba_ryba"
+                else head (tail cmdWords)
+    "grubą" -> if "ryba" `elem` cmdWords || "rybe" `elem` cmdWords || "rybę" `elem` cmdWords
+                then "gruba_ryba"
+                else head (tail cmdWords)
     "chudą_rybą" -> "chuda_ryba"
     "chudą_ryba" -> "chuda_ryba"
     "chuda_rybą" -> "chuda_ryba"

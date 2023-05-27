@@ -1,0 +1,59 @@
+zobacz skafander
+zobacz kalendarz
+wpisz 2137
+podnies skafander
+idz na dziob
+zobacz szafe
+podnies drabine
+uzyj drabiny
+podnies mlotek
+idz na przod ogona
+podnies haczyk
+zobacz szklane drzwiczki
+zobacz dolne drziwczki
+idz na tyl ogona
+podniesz szalik
+uzyj haczyka
+idz na przod ogona
+wpisz kapibara
+podnies kule do kregli
+uzyj kuli do kregli
+uzyj kuli w szaliku
+idz na tyl ogona
+wpisz <>^^>
+podnies klucz francuski
+idz do pokoju
+uzyj skafander
+idz do sluzy
+otworz
+idz na lewe skrzydlo
+zobacz silnik
+uzyj mlotka
+idz do sluzy
+zamknij 
+idz do pokoju
+zdejmij skafander
+zapytaj janusz o chuda rybe
+zapytaj chuda rybe o zone
+zapytaj chuda rybe o mieszkanie
+zapytaj chuda rybe o matke
+zobacz szafki
+zapytaj janusza o szafki
+otworz szafke janusza
+zapytaj janusza o przynety
+podnies wedke bez haczyka
+podnies niebieska przynete
+uzyj haczyka
+uzyj niebieska przynete
+uzyj skafander
+idz do sluzy
+otworz
+idz na prawe skrzydlo
+zobacz silnik
+uzyj wedki z niebieska przyneta
+idz do sluzy
+zamknij
+idz do pokoju
+zapytaj janusza o gruba ryba
+idz do dziobu
+napraw
