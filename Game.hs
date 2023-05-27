@@ -72,8 +72,20 @@ gameLoop status = do
                     let (returningMessage, newStatus) = pickupItem status processedCommand
                     putStrLn returningMessage
                     gameLoop newStatus
+        
+        "podnieś"   -> do
+                    let processedCommand = polishCompensationItem cmdWords
+                    let (returningMessage, newStatus) = pickupItem status processedCommand
+                    putStrLn returningMessage
+                    gameLoop newStatus
 
         "uzyj"      -> do
+                    let processedCommand = polishCompensationItem cmdWords
+                    let (returningMessage, newStatus) = useItem status processedCommand
+                    printLines returningMessage
+                    gameLoop newStatus
+        
+        "użyj"      -> do
                     let processedCommand = polishCompensationItem cmdWords
                     let (returningMessage, newStatus) = useItem status processedCommand
                     printLines returningMessage
@@ -84,8 +96,10 @@ gameLoop status = do
                     printLines returningMessage
                     gameLoop newStatus
 
-        "zapytaj"   -> do -- as above
-                    let (returningMessage, newStatus) = askAbout status secondWord lastWord
+        "zapytaj"   -> do 
+                    let processedAsked = polishCompensationAsked cmdWords
+                    let processedTopic = polishCompensationTopic cmdWords
+                    let (returningMessage, newStatus) = askAbout status processedAsked processedTopic
                     printLines returningMessage
                     gameLoop newStatus
 
