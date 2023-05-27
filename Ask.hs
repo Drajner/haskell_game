@@ -132,7 +132,7 @@ polishCompensationTopic cmdWords = case last cmdWords of
     "wędki"     ->  if "haczyka" `elem` cmdWords
                         then "wedka_bez_haczyka"
                         else "wedka"
-    "haczyka"   -> if ("wedka" `elem` cmdWords || "wędka" `elem` cmdWords) && "bez" `elem` cmdWords
+    "haczyka"   -> if ("wedka" `elem` cmdWords || "wędka" `elem` cmdWords || "wędke" `elem` cmdWords || "wędkę" `elem` cmdWords) && "bez" `elem` cmdWords
                         then "wedka_bez_haczyka"
                         else last cmdWords
     "wedke_bez_haczyka" -> "wedka_bez_haczyka"
